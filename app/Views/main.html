@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <base href="<?php echo $BASE; ?>/" />
+
+	<title>U &amp; ME</title>
+
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <link href="public/stylesheet/style.css" rel="stylesheet" type="text/css" />
+  <link href="public/stylesheet/uandme.css" rel="stylesheet" type="text/css" />
+  
+</head>
+<body class="clearfix">
+
+
+  <header>
+
+  </header>
+
+
+  <div class="dlPhoto">
+  <div class="txtPhoto"> <p>Téléchargez une photo de votre compagnon : </p>
+    <form method="post" action="achanger.php" enctype="multipart/form-data">
+        <input type="hidden" name="tailleMax" value="1048576" />
+        <input type="file" name="Parcourir" />
+        <input type="submit" name="submitPhoto" value="Envoyer" />
+    </form>
+  </div>
+
+
+
+  <section>
+  </section>
+
+
+
+	<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript" src="public/js/wtfay.js"></script>
+</body>
+</html>

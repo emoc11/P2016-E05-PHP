@@ -1,0 +1,15 @@
+body{
+	font-family:'Helvetica Neue', sans-serif;
+	font-size:75%;
+	min-height:100%;
+	overflow:none;
+	background-color:#2D4259;
+	font-color: white;
+}
+
+a, a:visited {
+	text-decoration:none;
+	color:#6E6E6E;
+}
+
+ul {display:inline-block;list-style:none;padding:0;}
