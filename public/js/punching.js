@@ -1,45 +1,28 @@
-// $(document).ready(function(){
+$(document).ready(function(){
+	var score = 0;
+	var started=false;
+	$("#punching_start").on('click',function(){
+		window.alert('GO');
+		started=true;
+		$("#punching_start").hide();
+		setTimeout(function(){
+			$("#punching_start").show();
+			started=false; }
+			, 8000);
+	});
 
-// 	var files;
+	$("#punching_img").on('click',function(e){
+		var parentOffset = $(this).offset();
+		if(started==false){
+			//window.alert("le jeu n'a pas commencé");
+		}
+		else{
+			score++;
+			$("#punching_score").text(score);
+			$("#punching_jeu").append("<img src=\"app/Views/img/flechette.png\" class=\"flechette\" id=\"flechette"+score+"\"/>");
+			// window.alert(parseInt(e.pageX-parentOffset.left)+','+parseInt(e.pageY-parentOffset.top));
+			$("#flechette"+score+"").css('left',e.pageX-parentOffset.left-37).css('top',e.pageY-parentOffset.top);
+		}
+	});
 
-// 	// Add events
-// 	$('input[type=file]').on('change', function(event) {
-// 		files = event.target.files;
-// 	});
-
-// 	$("#image_punch").on('submit', function(e){
-// 		e.preventDefault();
-
-// 		// Ajoute l'image dans l'objet
-// 		var data = new FormData();
-// 		$.each(files, function(key, value)
-// 		{
-// 			data.append(key, value);
-// 		});
-
-// 		$.ajax({
-// 	        url: "punching-ball?files",
-// 	        type: 'POST',
-// 	        data: data,
-// 	        cache: false,
-// 	        dataType: 'json',
-// 	        processData: false,
-// 	        contentType: false,
-// 	        success: function(data, textStatus, jqXHR)
-// 	        {
-// 	        	if(typeof data.error === 'undefined')
-// 	        	{
-// 	        		submitForm(event, data);
-// 	        	}
-// 	        	else
-// 	        	{
-// 	        		console.log('ERRORS: ' + data.error);
-// 	        	}
-// 	        },
-// 	        error: function(jqXHR, textStatus, errorThrown)
-// 	        {
-// 	        	console.log('ERRORS: ' + textStatus);
-// 	        }
-//     	});
-// 	});
-// });
+});

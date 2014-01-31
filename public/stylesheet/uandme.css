@@ -11,3 +11,19 @@ a, a:visited {
 }
 
 ul {display:inline-block;list-style:none;padding:0;}
+
+#punching{
+	border: 1px solid black;
+}
+
+#punching_jeu{
+	border: solid 1px red;
+}
+
+#punching_img{
+	float: left;
+}
+
+.flechette{
+	position: absolute;
+}
