@@ -25,18 +25,13 @@
   <div class="upload_image">
     <p>Téléchargez une photo de votre compagnon : </p>
     <form method="post" action="punching-ball/" enctype="multipart/form-data">
+        <input type="hidden" name="<?php echo ini_get("session.upload_progress.name"); ?>" value="123" />
         <input type="file" name="files" id='files' />
         <input type="submit" name="submitPhoto" value="Envoyer" />
     </form>
   </div>
 
-    <?php // Impression de l'image reçue précédemment
-        if (isset($url_image) && !empty($url_image)) {
-            echo "<img src='$url_image' alt='Image du partenaire' />";
-        }
-    ?>
-
-
+  
 
   <section id='punching_jeu'>
     <button id="punching_start">Start</button>

@@ -7,37 +7,39 @@ class App_controller{
     }
 
     function home(){
-    echo View::instance()->render('main.html');
+        echo View::instance()->render('main.html');
     }
 
     function image_punching($f3){
-        if(isset($_FILES['files']))
-        {
-            $error = false;
-            $files = array();
+        if($_FILES['files']) {
+            
+            $web=\Web::instance();
+            $file = $_FILES["files"]['tmp_name'];
 
-            $uploaddir = '../Views/img/';
-            foreach($_FILES as $file)
-            {
-                if(move_uploaded_file($file['tmp_name'].$file['name'], $uploaddir.basename($file['name'])))
-                {
-                  $files[] = $uploaddir.$file['name'];
-                }
-                else
-                {
-                    $error = true;
-                }
+            // Mise en place de la route
+            $f3->set('UPLOADS',$f3->get('TEMP'));
+            $f3->route('PUT /upload/@filename',
+                function() use($web) { $web->receive(); }
+            );
+
+            // Upload de l'image
+            $f3->mock('PUT /upload/'.basename($file),NULL,NULL,$f3->read($file));
+
+            // Vérification de l'upload + reussite
+            if(is_file($target=$f3->get('UPLOADS').basename($file))) { 
+                $f3->set('image_punching_retour', 'Uploaded file done via PUT');
+                $f3->set('image_punching_path', $target);
+                @unlink($target);
             }
-            $data = ($error) ? array('error' => 'There was an error uploading your files') : array('files' => $files);
+            else {
+                $f3->set('image_punching_retour', "Un problème est survenu lors de l'upload de l'image. Veuillez réessayer.");
+            }
+
+            echo View::instance()->render('main.html');
+
+        } else {
+            echo View::instance()->render('main.html');
         }
-        else
-        {
-            $data = array('success' => 'Form was submitted', 'formData' => $_POST);
-            print_r("<h1>test</h1>");
-        }
-     
-        echo json_encode($data);
-        echo View::instance()->render('main.html');
     }
 
     /* Autres controllers */
