@@ -10,9 +10,5 @@ class App_model extends Model{
     
   }
   
-  function image_punch($f3,$params){
-    return $this->getMapper('images_util')->insert('');
-  }
-  
 }
 ?>

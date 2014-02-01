@@ -11,35 +11,28 @@ class App_controller{
     }
 
     function image_punching($f3){
-        if($_FILES['files']) {
-            
-            $web=\Web::instance();
-            $file = $_FILES["files"]['tmp_name'];
+        if($_FILES['files']['error'] == 0) {
+            \Web::instance()->receive(function($file){
+                    $f3=\Base::instance();
+                    if($file['size'] > (2 * 1024 * 1024)){ // if bigger than 2 MB
+                        $f3->set('image_punching_retour','Erreur : le fichier est > 2Mb.');
+                        return false;
+                    }
+                    else {
+                        $f3->set('image_punching_name',$_FILES['files']['name']);
+                        $f3->set('image_punching_retour',"L'envoi s'est bien déroulé.");
+                        return true;
+                    }
 
-            // Mise en place de la route
-            $f3->set('UPLOADS',$f3->get('TEMP'));
-            $f3->route('PUT /upload/@filename',
-                function() use($web) { $web->receive(); }
+                },
+                true, // overwrite
+                false // rename to UTF-8 save filename
             );
-
-            // Upload de l'image
-            $f3->mock('PUT /upload/'.basename($file),NULL,NULL,$f3->read($file));
-
-            // Vérification de l'upload + reussite
-            if(is_file($target=$f3->get('UPLOADS').basename($file))) { 
-                $f3->set('image_punching_retour', 'Uploaded file done via PUT');
-                $f3->set('image_punching_path', $target);
-                @unlink($target);
-            }
-            else {
-                $f3->set('image_punching_retour', "Un problème est survenu lors de l'upload de l'image. Veuillez réessayer.");
-            }
-
-            echo View::instance()->render('main.html');
-
         } else {
-            echo View::instance()->render('main.html');
+            $f3->set('image_punching_retour',"Erreur : une erreur est sruvenue lors de l'envoi de l'image.");
         }
+
+        echo View::instance()->render('main.html');
     }
 
     /* Autres controllers */
