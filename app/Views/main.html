@@ -34,7 +34,8 @@
   
 
   <section id='punching_jeu'>
-    <button id="punching_start">Start</button>
+  	<button id="punch" class="rage">Punch</button>
+  	<button id="kiss" class="rage">Kiss</button>
     <?php
     if(isset($_FILES['files']) && $_FILES['files'] != null) {
         echo "<img src='app/Views/img/".$_FILES['files']['name']."' alt='punching' id='punching_img'>";
@@ -44,6 +45,7 @@
     ?>
     <!-- <img src="app/Views/img/bfriend.jpg" alt="punching" id="punching_img"> -->
     <h3>Score : <span id="punching_score">0</span></h3>
+    <button id="send">Partager votre score</button>
   </section>
 
 
