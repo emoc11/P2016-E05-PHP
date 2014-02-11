@@ -17,11 +17,32 @@
 <body class="clearfix">
 
 
-  <header>
-
+  <header id="header">
+	  <img src="" id="logo" alt="U&ME"/>
+	  <a id="logout">Déconnexion</a>
+	  <img src="" id="notifications" alt="notif"/>
   </header>
-
-
+  <nav id="mainNav">
+  	<ul>
+  	<li class="itemMenu" id="nous"><a href="nous"></a></li>
+  	<li class="itemMenu" id="chat"><a href="nous"></a></li>
+  	<li class="itemMenu" id="tabou"><a href="nous"></a></li>
+  	<li class="itemMenu" id="coquin"><a href="nous"></a></li>
+  	</ul>
+  </nav>
+  <nav id="stats">
+	  <ul class="me">
+	  	<li>MOI</li>
+	  	<li class="mood round red"></li>
+	  	<li class="menuPts round">1200</li>
+	  </ul>
+	  <ul class="you">
+	  	<li>ELLE</li>
+	  	<li class="mood round orange"></li>
+	  	<li class="menuPts round">1280</li>
+	  </ul>
+  </nav>
+  <section class="main" id='punching_jeu'>
   <div class="upload_image">
     <p>Téléchargez une photo de votre compagnon : </p>
     <form method="post" action="punching-ball/" enctype="multipart/form-data">
@@ -30,26 +51,30 @@
         <input type="submit" name="submitPhoto" value="Envoyer" />
     </form>
   </div>
-
-  
-
-  <section id='punching_jeu'>
-  	<button id="punch" class="rage">Punch</button>
+  	<!--
+<button id="punch" class="rage">Punch</button>
   	<button id="kiss" class="rage">Kiss</button>
+-->
     <?php
     if(isset($_FILES['files']) && $_FILES['files'] != null) {
         echo "<img src='app/Views/img/".$_FILES['files']['name']."' alt='punching' id='punching_img'>";
     } else {
-        echo "<img src='app/Views/img/bfriend.jpg' alt='punching' id='punching_img'>";
+        //echo "<img src='app/Views/img/bfriend.jpg' alt='punching' id='punching_img'>";
     }
     ?>
-    <!-- <img src="app/Views/img/bfriend.jpg" alt="punching" id="punching_img"> -->
-    <h3>Score : <span id="punching_score">0</span></h3>
-    <button id="send">Partager votre score</button>
+    <div id="game">
+    	<h2>C'est l'heure de lui régler son compte...</h2>
+    	<img src="app/Views/img/bfriend.jpg" alt="punching" id="punching_img">
+    	<h3>Timing</h3><span id="punching_timing" class="round orange">60</span>
+    	<h3>Score</h3><span id="punching_score" class="round red">20</span>
+<!--     <button id="send">Partager votre score</button> -->
+	<div>
   </section>
 
 
-
+<footer>
+	<p>Mention légales - Copyright</p>
+</footer>
 	<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 	<script type="text/javascript" src="public/js/punching.js"></script>
 </body>

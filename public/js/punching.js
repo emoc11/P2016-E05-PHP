@@ -18,7 +18,8 @@ $(document).ready(function(){
 		score = 0;
 		$("#punching_score").text(score);
 		started=true;
-		$("#punching_start").hide();
+		$("#kiss").hide();
+		$("#punch").hide();
 		if(rage=="bisou"){
 			$("#punching_img").css('cursor','help');
 		}
@@ -26,7 +27,8 @@ $(document).ready(function(){
 			$("#punching_img").css('cursor','url(\'app/Views/img/fleche.png\'),help');
 		}		
 		setTimeout(function(){
-			$("#punching_start").show();
+			$("#kiss").show();
+			$("#punch").show();
 			$("#send").show();
 			started=false; }
 			, 5000);
