@@ -1,13 +1,14 @@
 <?php
-class App_controller{
+class App_controller extends Controller{
 
 
     function __construct(){
 
     }
 
-    function home(){
-        echo View::instance()->render('main.html');
+    function punching(){
+        $this->tpl=array('render'=>'punching.html');
+        echo View::instance()->render('punching.html');
     }
 
     function image_punching($f3){
@@ -32,7 +33,7 @@ class App_controller{
             $f3->set('image_punching_retour',"Erreur : une erreur est sruvenue lors de l'envoi de l'image.");
         }
 
-        echo View::instance()->render('main.html');
+        echo View::instance()->render('punching.html');
     }
 
     /* Autres controllers */

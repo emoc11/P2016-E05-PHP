@@ -2,6 +2,7 @@
 class Model{
   
 private $dB;
+protected $model;
   
 	function __construct(){
 		$f3=\Base::instance();

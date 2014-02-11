@@ -6,7 +6,7 @@ class App_model extends Model{
     parent::__construct();
   }
   
-  function home(){
+  function punching(){
     
   }
   
