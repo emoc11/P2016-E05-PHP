@@ -43,7 +43,8 @@
 	  </ul>
   </nav>
   <section class="main" id='punching_jeu'>
-  <div class="upload_image">
+  <!--
+<div class="upload_image">
     <p>Téléchargez une photo de votre compagnon : </p>
     <form method="post" action="punching-ball/" enctype="multipart/form-data">
         <input type="hidden" name="<?php echo ini_get("session.upload_progress.name"); ?>" value="123" />
@@ -51,9 +52,6 @@
         <input type="submit" name="submitPhoto" value="Envoyer" />
     </form>
   </div>
-  	<!--
-<button id="punch" class="rage">Punch</button>
-  	<button id="kiss" class="rage">Kiss</button>
 -->
     <?php
     if(isset($_FILES['files']) && $_FILES['files'] != null) {
@@ -62,18 +60,25 @@
         //echo "<img src='app/Views/img/bfriend.jpg' alt='punching' id='punching_img'>";
     }
     ?>
-    <div id="game">
     	<h2>C'est l'heure de lui régler son compte...</h2>
+    <div id="game">
     	<img src="app/Views/img/bfriend.jpg" alt="punching" id="punching_img">
-    	<h3>Timing</h3><span id="punching_timing" class="round orange">60</span>
-    	<h3>Score</h3><span id="punching_score" class="round red">20</span>
+    	<div id="scores">
+    		<h3>Timing</h3><span id="punching_timing" class="orange">60</span>
+    		<h3>Score</h3><span id="punching_score" class="red">20</span>
+    	</div>
+    	<p id="buttons">
+	    	<button>GO</button>
+	    	<button id="punch" class="rage">Punch</button>
+	    	<button id="kiss" class="rage">Kiss</button>
+    	</p>
 <!--     <button id="send">Partager votre score</button> -->
 	<div>
   </section>
 
 
 <footer>
-	<p>Mention légales - Copyright</p>
+	<p>Mentions légales - Copyright</p>
 </footer>
 	<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 	<script type="text/javascript" src="public/js/punching.js"></script>
