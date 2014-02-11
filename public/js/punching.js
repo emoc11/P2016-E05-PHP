@@ -26,12 +26,20 @@ $(document).ready(function(){
 		else{
 			$("#punching_img").css('cursor','url(\'app/Views/img/fleche.png\'),help');
 		}		
-		setTimeout(function(){
+		gameTimer = setTimeout(function(){
 			$("#kiss").show();
 			$("#punch").show();
 			$("#send").show();
 			started=false; }
-			, 5000);
+			, 15000);
+			
+		var sec = 14
+		var mTimer = setInterval(function() {
+			$('#punching_timing').text(sec--);
+			if (sec ==-1) {
+				clearInterval(mTimer);
+			}
+		}, 1000);
 	}
 	$("#punching_img").on('click',function(e){
 		var parentOffset = $(this).offset();
@@ -41,13 +49,14 @@ $(document).ready(function(){
 		else{
 			score++;
 			$("#punching_score").text(score);
+			//$("#punching_timing").text(gameTimer);
 			if(rage=="bisou"){
 				$("#punching_jeu").append("<img src=\"app/Views/img/bisou.png\" class=\"flechette\" id=\"flechette"+score+"\"/>");
-				$("#flechette"+score+"").css('left',e.pageX-parentOffset.left).css('top',e.pageY-parentOffset.top+61);
+				$("#flechette"+score+"").css('left',e.pageX-15).css('top',e.pageY-9);
 			}
 			else{
 				$("#punching_jeu").append("<img src=\"app/Views/img/flechee.png\" class=\"flechette\" id=\"flechette"+score+"\"/>");
-				$("#flechette"+score+"").css('left',e.pageX-parentOffset.left).css('top',e.pageY-parentOffset.top+61);
+				$("#flechette"+score+"").css('left',e.pageX).css('top',e.pageY);
 			}
 		}
 	});
