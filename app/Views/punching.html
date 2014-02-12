@@ -20,7 +20,7 @@
 
   <?php
     // Affichage de l'URL de l'image -> problème de array() vers object a regler...
-    //if(isset($url_image)) echo $url_image->img;
+    //if(isset($url_image)) echo $url_image[0]['img'];
   ?>
 
   <header>
@@ -62,16 +62,24 @@
     </form>
   </div>
 -->
-    <?php
-    if(isset($_FILES['files']) && $_FILES['files'] != null) {
-        echo "<img src='app/Views/img/".$_FILES['files']['name']."' alt='punching' id='punching_img'>";
-    } else {
-        //echo "<img src='app/Views/img/bfriend.jpg' alt='punching' id='punching_img'>";
-    }
-    ?>
     	<h2>C'est l'heure de lui régler son compte...</h2>
     <div id="game">
-    	<img src="app/Views/img/bfriend.jpg" alt="punching" id="punching_img">
+        <?php
+            // Affichage de l'image de l'utilisateur OU image basique si absente
+
+            /*if(isset($_FILES['files']) && $_FILES['files'] != null) {
+                echo "<img src='app/Views/img/".$_FILES['files']['name']."' alt='punching' id='punching_img'>";
+            } else {
+                echo "<img src='app/Views/img/bfriend.jpg' alt='punching' id='punching_img'>";
+            }*/
+
+            if(isset($url_image[0]['img']) && !empty($url_image[0]['img'])) {
+                echo "<img src='app/Views/img/".$url_image[0]['img']."' alt='image_punching' id='punching_img'>";
+            }
+            else {
+                echo "<img src='app/Views/img/bfriend.jpg' alt='punching' id='punching_img'>";
+            }
+        ?>
     	<div id="scores">
     		<h3>Timing</h3><span id="punching_timing" class="orange">60</span>
     		<h3>Score</h3><span id="punching_score" class="red">20</span>
