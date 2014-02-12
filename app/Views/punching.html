@@ -39,16 +39,16 @@
   </nav>
 
   <section id="stats">
-	  <ul class="stats_one">
-	  	<li>MOI</li>
-	  	<li class="mood round red"></li>
-	  	<li class="menuPts round">1200</li>
-	  </ul>
-	  <ul class="stats_one">
-	  	<li>TOI</li>
-	  	<li class="mood round orange"></li>
-	  	<li class="menuPts round">1280</li>
-	  </ul>
+        <ul class="stats_one">
+        	<li>MOI</li>
+        	<li class="mood round red"></li>
+        	<li class="menuPts round">1200</li>
+        </ul>
+        <ul class="stats_one">
+        	<li>TOI</li>
+        	<li class="mood round orange"></li>
+        	<li class="menuPts round">1280</li>
+        </ul>
   </section>
 
   <section class="main" id='punching_jeu'>
@@ -66,18 +66,11 @@
     <div id="game">
         <?php
             // Affichage de l'image de l'utilisateur OU image basique si absente
-
-            /*if(isset($_FILES['files']) && $_FILES['files'] != null) {
-                echo "<img src='app/Views/img/".$_FILES['files']['name']."' alt='punching' id='punching_img'>";
-            } else {
-                echo "<img src='app/Views/img/bfriend.jpg' alt='punching' id='punching_img'>";
-            }*/
-
             if(isset($url_image[0]['img']) && !empty($url_image[0]['img'])) {
                 echo "<img src='app/Views/img/".$url_image[0]['img']."' alt='image_punching' id='punching_img'>";
             }
             else {
-                echo "<img src='app/Views/img/bfriend.jpg' alt='punching' id='punching_img'>";
+                echo "<img src='app/Views/img/bfriend2.jpg' alt='punching' id='punching_img'>";
             }
         ?>
     	<div id="scores">
