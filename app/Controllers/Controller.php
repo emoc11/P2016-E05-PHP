@@ -13,7 +13,6 @@ protected $model;
   
   
   function afterroute($f3){
-    $mimeTypes=array('html'=>'text/html','json'=>'application/json');
     $tpl=$this->tpl['render'];
     echo View::instance()->render($tpl);
   } 

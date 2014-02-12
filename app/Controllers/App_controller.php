@@ -6,9 +6,10 @@ class App_controller extends Controller{
 
     }
 
-    function punching(){
+    function punching($f3){
+        $params['users_id'] = 1;
+        $f3->set('url_image',$this->model->getPunchImg(array('users_id'=>$params['users_id'])));
         $this->tpl=array('render'=>'punching.html');
-        echo View::instance()->render('punching.html');
     }
 
     function image_punching($f3){
@@ -33,7 +34,7 @@ class App_controller extends Controller{
             $f3->set('image_punching_retour',"Erreur : une erreur est sruvenue lors de l'envoi de l'image.");
         }
 
-        echo View::instance()->render('punching.html');
+        $this->tpl=array('render'=>'punching.html');
     }
 
     /* Autres controllers */
