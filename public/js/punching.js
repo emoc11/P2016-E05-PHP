@@ -16,7 +16,7 @@ $(document).ready(function(){
 		$(".flechette").remove();
 		$("#send").hide();
 		score = 0;
-		$("#punching_score").text(score);
+		$("#punching_scorep").text(score);
 		started=true;
 		$("#kiss").hide();
 		$("#punch").hide();
@@ -35,7 +35,7 @@ $(document).ready(function(){
 			
 		var sec = 14
 		var mTimer = setInterval(function() {
-			$('#punching_timing').text(sec--);
+			$('#punching_timingp').text(sec--);
 			if (sec ==-1) {
 				clearInterval(mTimer);
 			}
@@ -48,7 +48,7 @@ $(document).ready(function(){
 		}
 		else{
 			score++;
-			$("#punching_score").text(score);
+			$("#punching_scorep").text(score);
 			//$("#punching_timing").text(gameTimer);
 			if(rage=="bisou"){
 				$("#punching_jeu").append("<img src=\"app/Views/img/bisou.png\" class=\"flechette\" id=\"flechette"+score+"\"/>");

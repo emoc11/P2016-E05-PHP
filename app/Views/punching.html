@@ -74,16 +74,21 @@
             }
         ?>
     	<div id="scores">
-    		<h3>Timing</h3><span id="punching_timing" class="orange">60</span>
-    		<h3>Score</h3><span id="punching_score" class="red">20</span>
+    		<h3>Timing</h3><span id="punching_timing" class="orange"><p id="punching_timingp" >60</p></span>
+    		<h3>Score</h3><span id="punching_score" class="red"><p id="punching_scorep">20<p></span>
     	</div>
     	<p id="buttons">
-	    	<button>GO</button>
-	    	<button id="punch" class="rage">Punch</button>
-	    	<button id="kiss" class="rage">Kiss</button>
+	    	<button class="OrgBorder">GO</button>
+	    	<button id="punch" class="rage OrgBorder">Punch</button>
+	    	<button id="kiss" class="rage OrgBorder">Kiss</button>
     	</p>
 <!--     <button id="send">Partager votre score</button> -->
 	<div>
+	<div id="pop_send">
+		<p> Tu lui as mis <span id="final_score">10</span> <span="rage">coups</span>. La photo va être ajoutée dans le chat. Veux-tu ajouter un message ?</p>
+		<textarea class="OrgBorder" rows="8"></textarea>
+		<p id="truc"><button class="OrgBorder padd">Valider</button></p>
+	</div>
   </section>
 
 
