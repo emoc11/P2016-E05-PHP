@@ -37,6 +37,19 @@ class App_controller extends Controller{
         $this->tpl=array('render'=>'punching.html');
     }
 
+
+
+
+    function calendrier($f3){
+        $params['couples_id'] = 1;
+        $f3->set('calendar_name',$this->model->calendrier(array('couples_id'=>$params['couples_id'])));
+        $this->tpl=array('render'=>'calendrier.html');
+    }
+
+    function calendrier_retour($f3){
+        $this->tpl=array('render'=>'calendrier.html');
+    }
+
     /* Autres controllers */
 
 
