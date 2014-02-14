@@ -2,6 +2,7 @@ $(document).ready(function(){
 	var score = 0;
 	var started=false;
 	var rage;
+	$("#pop_send").hide();
 	$("#send").hide();
 	$("#punch").on('click',function(){
 		rage="punch";
@@ -30,6 +31,7 @@ $(document).ready(function(){
 			$("#kiss").show();
 			$("#punch").show();
 			$("#send").show();
+			$("#pop_send").show();
 			started=false; }
 			, 15000);
 			
@@ -59,6 +61,13 @@ $(document).ready(function(){
 				$("#flechette"+score+"").css('left',e.pageX).css('top',e.pageY);
 			}
 		}
+	});
+	
+	$("#pop_send_btn").on('click',function(e){
+		$("#pop_send").hide();
+		$(".flechette").remove();
+		score=0;
+		$("#punching_scorep").text(score);
 	});
 
 });

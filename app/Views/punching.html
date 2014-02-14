@@ -26,6 +26,7 @@
   <header>
 	  <img src="" id="logo" alt="U&ME"/>
 	  <a id="logout">Déconnexion</a>
+	  <img src="<?php echo $IMG; ?>settings.png" id="settings" alt="settings"/>
 	  <img src="" id="notifications" alt="notif"/>
   </header>
 
@@ -40,14 +41,14 @@
 
   <section id="stats">
         <ul class="stats_one">
-        	<li>MOI</li>
+        	<li><p>MOI</p></li>
         	<li class="mood round red"></li>
-        	<li class="menuPts round">1200</li>
+        	<li class="menuPts round"><p>1200</p></li>
         </ul>
         <ul class="stats_one">
-        	<li>TOI</li>
+        	<li><p>TOI</p></li>
         	<li class="mood round orange"></li>
-        	<li class="menuPts round">1280</li>
+        	<li class="menuPts round"><p>1280</p></li>
         </ul>
   </section>
 
@@ -62,7 +63,7 @@
     </form>
   </div>
 -->
-    	<h2>C'est l'heure de lui régler son compte...</h2>
+    	<h1>C'est l'heure de s'occuper de <span id="sexe">lui</span>...</h1>
     <div id="game">
         <?php
             // Affichage de l'image de l'utilisateur OU image basique si absente
@@ -70,7 +71,7 @@
                 echo "<img src='app/Views/img/".$url_image[0]['img']."' alt='image_punching' id='punching_img'>";
             }
             else {
-                echo "<img src='app/Views/img/bfriend2.jpg' alt='punching' id='punching_img'>";
+                echo "<img src='<?php echo $IMG; ?>bfriend2.jpg' alt='punching' id='punching_img'>";
             }
         ?>
     	<div id="scores">
@@ -78,8 +79,7 @@
     		<h3>Score</h3><span id="punching_score" class="red"><p id="punching_scorep">20<p></span>
     	</div>
     	<p id="buttons">
-	    	<button class="OrgBorder">GO</button>
-	    	<button id="punch" class="rage OrgBorder">Punch</button>
+	    	<button id="punch" class="rage OrgBorder">Punch</button> 
 	    	<button id="kiss" class="rage OrgBorder">Kiss</button>
     	</p>
 <!--     <button id="send">Partager votre score</button> -->
@@ -87,7 +87,7 @@
 	<div id="pop_send">
 		<p> Tu lui as mis <span id="final_score">10</span> <span="rage">coups</span>. La photo va être ajoutée dans le chat. Veux-tu ajouter un message ?</p>
 		<textarea class="OrgBorder" rows="8"></textarea>
-		<p id="truc"><button class="OrgBorder padd">Valider</button></p>
+		<p id="pop_send_btn"><button class="OrgBorder padd">Valider</button></p>
 	</div>
   </section>
 
