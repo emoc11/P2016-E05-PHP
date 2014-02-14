@@ -18,11 +18,6 @@
 </head>
 <body class="clearfix">
 
-  <?php
-    // Affichage de l'URL de l'image -> problème de array() vers object a regler...
-    //if(isset($url_image)) echo $url_image[0]['img'];
-  ?>
-
   <header>
 	  <img src="" id="logo" alt="U&ME"/>
 	  <a id="logout">Déconnexion</a>
@@ -53,7 +48,8 @@
   </section>
 
   <section class="main" id='punching_jeu'>
-  <!--
+  
+  <!-- A CONSERVER ICI POUR L'INSTANT
 <div class="upload_image">
     <p>Téléchargez une photo de votre compagnon : </p>
     <form method="post" action="punching-ball/" enctype="multipart/form-data">
@@ -63,12 +59,17 @@
     </form>
   </div>
 -->
+<<<<<<< HEAD
     	<h1>C'est l'heure de s'occuper de <span id="sexe">lui</span>...</h1>
+=======
+
+    	<h2>C'est l'heure de lui régler son compte...</h2>
+>>>>>>> 7865414063ef0da9ae3a70416067c37baeea9e0a
     <div id="game">
         <?php
             // Affichage de l'image de l'utilisateur OU image basique si absente
-            if(isset($url_image[0]['img']) && !empty($url_image[0]['img'])) {
-                echo "<img src='app/Views/img/".$url_image[0]['img']."' alt='image_punching' id='punching_img'>";
+            if(isset($url_image) && !empty($url_image)) {
+                echo "<img src='app/Views/img/".$url_image."' alt='image_punching' id='punching_img'>";
             }
             else {
                 echo "<img src='<?php echo $IMG; ?>bfriend2.jpg' alt='punching' id='punching_img'>";
