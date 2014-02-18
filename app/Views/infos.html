@@ -25,7 +25,8 @@
 	  <img src="" id="notifications" alt="notif"/>
   </header>
 
-  <nav>
+  <!--
+<nav>
   	<ul>
   	<li class="itemMenu" id="nous"><a href="nous"></a></li>
   	<li class="itemMenu" id="chat"><a href="nous"></a></li>
@@ -33,30 +34,21 @@
   	<li class="itemMenu" id="coquin"><a href="nous"></a></li>
   	</ul>
   </nav>
-
-  <section id="stats">
-        <ul class="stats_one">
-        	<li><p>MOI</p></li>
-        	<li class="mood round red"></li>
-        	<li class="menuPts round"><p>1200</p></li>
-        </ul>
-        <ul class="stats_one">
-        	<li><p>TOI</p></li>
-        	<li class="mood round orange"></li>
-        	<li class="menuPts round"><p>1280</p></li>
-        </ul>
-  </section>
-
+-->
+  
   <section class="main" id="infosPersos">
-	  <h1>Infos personnellles</h1>
+	  <h1 class="mainTitle">Infos personnellles</h1>
 	  <form>
 	  	<fieldset id="infos">
-		  <input type="text" id="nom"/>
+		  <input type="text" id="nom"/><br/>
 		  <input type="radio">Femme</input>
 		  <input type="radio">Homme</input>
-		  <img src="<?php echo @IMG;?>plus.png"/>	  	
-		  <p>Ajouter une photo de profil</p>
+		  <div id="profilePic">
+		  	<img src="<?php echo @IMG;?>plus.png"/>	  	
+		  	<p>Ajouter une photo de profil</p>
+		  </div>
 		</fieldset>
+		
 		<fieldset id="dates">
 		  <label for="birthDay">Date de naissance</label>
 		  <select id="birthDay">
@@ -68,6 +60,7 @@
 		  <select id="birthYear">
 		  	<option>Année</option> 
 		  </select>
+		  <br />
 		  <label for="meetDay">Date de rencontre</label>
 		  <select id="meetDay">
 		  	<option>Jour</option> 
@@ -79,10 +72,13 @@
 		  	<option>Année</option> 
 		  </select>
 		</fieldset>
+		
 		<fieldset id="bgPic">
-		  <img src="<?php echo @IMG;?>plus.png"/>	  	
-		  <p>Ajouter une photo de fond</p>
-		  <p>Votre partenaire devra valider la photo choisie.</p>
+		  <div id="chooseBgPic">
+		  	<img src="<?php echo @IMG;?>plus.png"/>	  	
+		  	<p>Ajouter une photo de fond</p>
+		  </div>
+		  <p id="validBgPic">Votre partenaire devra valider la photo choisie.</p>
 		</fieldset>
 		  <button class="OrgBorder">Valider</button>
   </section>

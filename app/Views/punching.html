@@ -19,10 +19,12 @@
 <body class="clearfix">
 
   <header>
+  	<p>
 	  <img src="" id="logo" alt="U&ME"/>
 	  <a id="logout">Déconnexion</a>
 	  <img src="<?php echo $IMG; ?>settings.png" id="settings" alt="settings"/>
 	  <img src="" id="notifications" alt="notif"/>
+  	</p>
   </header>
 
   <nav>
@@ -36,12 +38,12 @@
 
   <section id="stats">
         <ul class="stats_one">
-        	<li><p>MOI</p></li>
+        	<li><p id="us">MOI</p></li>
         	<li class="mood round red"></li>
         	<li class="menuPts round"><p>1200</p></li>
         </ul>
         <ul class="stats_one">
-        	<li><p>TOI</p></li>
+        	<li><p id="us">TOI</p></li>
         	<li class="mood round orange"></li>
         	<li class="menuPts round"><p>1280</p></li>
         </ul>
@@ -59,9 +61,12 @@
     </form>
   </div>
 -->
-    	<h1>C'est l'heure de s'occuper de <span id="sexe">lui</span>...</h1>
-    <div id="game">
-        <?php
+    	<h1 class="mainTitle">C'est l'heure de s'occuper de <span id="sexe">lui</span>...</h1>
+    	<p id="buttons">
+	    	<button id="punch" class="rage OrgBorder">Punch</button><br />
+	    	<button id="kiss" class="rage OrgBorder">Kiss</button>
+    	</p>
+    	        <?php
             // Affichage de l'image de l'utilisateur OU image basique si absente
             if(isset($url_image) && !empty($url_image)) {
                 echo "<img src='app/Views/img/".$url_image."' alt='image_punching' id='punching_img'>";
@@ -74,17 +79,12 @@
     		<h3>Timing</h3><span id="punching_timing" class="orange"><p id="punching_timingp" >60</p></span>
     		<h3>Score</h3><span id="punching_score" class="red"><p id="punching_scorep">20<p></span>
     	</div>
-    	<p id="buttons">
-	    	<button id="punch" class="rage OrgBorder">Punch</button> 
-	    	<button id="kiss" class="rage OrgBorder">Kiss</button>
-    	</p>
 <!--     <button id="send">Partager votre score</button> -->
 	<div>
 	<div id="pop_send">
 		<p> Tu lui as mis <span id="final_score">10</span> <span="rage">coups</span>. La photo va être ajoutée dans le chat. Veux-tu ajouter un message ?</p>
 		<textarea class="OrgBorder" rows="8"></textarea>
 		<p id="pop_send_btn"><button class="OrgBorder padd">Valider</button></p>
-	</div>
   </section>
 
 

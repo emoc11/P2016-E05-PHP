@@ -19,8 +19,8 @@ $(document).ready(function(){
 		score = 0;
 		$("#punching_scorep").text(score);
 		started=true;
-		$("#kiss").hide();
-		$("#punch").hide();
+		$("#kiss").attr("disabled", true);
+		$("#punch").attr("disabled", true);
 		if(rage=="bisou"){
 			$("#punching_img").css('cursor','help');
 		}
@@ -28,8 +28,6 @@ $(document).ready(function(){
 			$("#punching_img").css('cursor','url(\'app/Views/img/fleche.png\'),help');
 		}		
 		gameTimer = setTimeout(function(){
-			$("#kiss").show();
-			$("#punch").show();
 			$("#send").show();
 			$("#pop_send").show();
 			started=false; }
@@ -65,6 +63,8 @@ $(document).ready(function(){
 	
 	$("#pop_send_btn").on('click',function(e){
 		$("#pop_send").hide();
+		$("#kiss").attr("disabled", false);
+		$("#punch").attr("disabled", false);
 		$(".flechette").remove();
 		score=0;
 		$("#punching_scorep").text(score);
