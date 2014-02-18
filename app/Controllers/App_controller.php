@@ -12,10 +12,6 @@ class App_controller extends Controller{
         $this->tpl=array('render'=>'punching.html');
     }
     
-    function infos($f3){
-        $this->tpl=array('render'=>'infos.html');
-    }
-    
     function calendrier($f3){
         $params['couples_id'] = 1;
         $f3->set('calendar_name',$this->model->calendrier(array('couples_id'=>$params['couples_id'])));

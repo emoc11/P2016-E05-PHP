@@ -47,10 +47,23 @@ ul {
 header{
 	font-family: Bellerose;
 	font-size: 20px;
-	height: 60px;
+	height: 100px;
+	width: 101%;
+	margin-left: -5px;
 	background-color: rgba(0,0,0,0.7);
 	margin-bottom: 2%;
-	}
+	-webkit-transform: rotate(-1deg);
+	-moz-transform: rotate(-1deg);
+	margin-top: -20px;
+	margin-bottom: 15px;
+}
+
+header p{
+	-webkit-transform: rotate(1deg);
+	-moz-transform: rotate(1deg);
+	padding-top: 40px;
+	padding-left: 4%;
+}
 
 
 #logo{
@@ -76,7 +89,10 @@ header{
 #logout{
 	float: right;
 	margin-right: 3%;
+	margin-top: -8px;
+	font-size: 25px;
 }
+
 
 #stats{
 	text-align: center;
@@ -84,21 +100,25 @@ header{
 	font-size: 20px;
 	background-color: rgba(0,0,0,0.4);
 	float: right;
-	width: 12%;
+	width: 15%;
 	margin: auto;
-/* 	padding: 2%; */
 	margin-right: 1%;
 	margin-left: 1%;
 	line-height: 55px;
 }
 
 #stats li{
-	margin:5px 0;
+	margin:5px 12px;
+}
+
+#us{
+	font-size: 30px;
+	margin: 0;
 }
 
 .round{
-	height: 70px;
-	width: 70px;
+	height: 65px;
+	width: 65px;
 	border-radius: 50px;
 }
 
@@ -119,13 +139,17 @@ li.menuPts p{
 	top: 10px;
 }
 
+ul.stats_one{
+	margin-top: 0;
+}
+
 ul.stats_one li p{
-	font-size: 25px;
+	font-size: 20px;
 }
 
 .mood{
-	height: 80px;
-	width: 80px;
+	height: 65px;
+	width: 65px;
 	background-image: url('img/smile1.png');
 	background-size: cover;	
 }
@@ -133,7 +157,7 @@ ul.stats_one li p{
 nav{
 	float: left;
 /* 	width: 12%;	 */
-	margin-left: 3%;
+	margin-left: 2%;
 	margin-right: 1%;
 	margin-top: 5%;
 	
@@ -201,54 +225,67 @@ nav li a{
 .main{
 	box-sizing: border-box;
 	background: rgba(0,0,0,0.5);
-	width: 70%;
-	min-height: 550px;
-	margin: auto;
-	padding: 2%;
-	
-	
+	width: 65%;
+	min-height: 580px;
+	padding: 1% 2%;
+	margin-left: 13%;	
 	
 	
 	
 /* 	border: 1px solid green; */
 }
+
+.mainTitle{
+	margin-top: 0;
+}
+
 #game{
 	width: 65%;
-	margin: auto;
 }
 
 #buttons{
-	text-align: center;
+	float: left;
+	padding: 10% 9% 0 9%;
 }
+
+#buttons button{
+	margin: 5px;
+	width: 100px;
+}
+
 
 #punching_jeu{
 }
 
 #punching_img{
-	height: 400px;
-	margin:auto;
+	max-height: 480px;
+	max-width: 430px;
+	float: left;
 }
 
 #scores{
-	float: right;
-	margin-left: 20px;
+	float: left;
+	text-transform:uppercase;
+	margin-left: 10%;
 }
 
 #scores h3{
-	font-family: TitilLig;	
+	font-family: TitilLig;
+	font-size: 20px;
+	margin-left: 10px;	
 }
 
 #punching_score, #punching_timing{
 	display: block;
-	height: 60px;
-	width: 60px;
+	height: 85px;
+	width: 85px;
 	border-radius: 80px;
 	background-position:center center;
 }
 
 #punching_scorep, #punching_timingp{
 	position: relative;
-	top:5px;
+	top:15px;
 	font-size: 30px;
 	text-align: center;
 }
@@ -272,6 +309,13 @@ height: 30px;
 
 button.padd{
 		padding: 0 50px 0 50px;
+}
+
+button[disabled=disabled]{
+	color:rgba(0,0,0,0.3);
+	border: 1px solid rgba(0,0,0,0.3);
+	background: rgba(0,0,0,0.2);
+	
 }
 
 .OrgBorder{
@@ -301,15 +345,79 @@ button.padd{
 }
 
 footer{
-	width: 100%;
+	-webkit-transform: rotate(-2deg);
+	-moz-transform: rotate(-2deg);
+	width: 120%;
+	height: 200px;
 	background-color: rgba(0,0,0,0.7);
 	position: fixed;
 	bottom: 0;
+	right: -20px;
+	bottom: -100px;
 }
 
 footer p{
-	float: right;
-	margin-right: 10%;
+	position: absolute;
+	top:50px;
+	right:100px;
+	-webkit-transform: rotate(2deg);
+	-moz-transform: rotate(2deg);
 }
 
 /* Page infos personelles*/
+
+#infosPersos{
+	width: 50%;
+	font-family: Bellerose;	
+}
+
+#infosPersos h1{
+	padding-bottom: 3%;
+}
+
+#profilePic{
+	float: right;
+	height: 150px;
+	width: 150px;
+	padding: 40px 20px;
+	border: 2px dashed orange;
+	text-align: center;
+}
+
+#dates{
+	width: 70%;
+	float: left;
+}
+
+#dates select{
+	width: 70px;
+	font-family: Bellerose;
+}
+
+select{
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	font-size: 15px;
+	height: 25px;
+	border-radius: 0;
+	border: none;
+	background: rgba(0,0,0,0.5);
+	color: white;
+}
+
+#chooseBgPic{
+	padding:60px 10px;
+	height: 200px;
+	width: 250px;
+	border: 2px dashed orange;
+	text-align: center;
+}
+
+
+#validBgPic{
+	margin-left: 300px;
+	text-align: center;
+	padding: 10px;
+	width: 200px;
+	background: rgba(0,0,0,0.3);
+}
