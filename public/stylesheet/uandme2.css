@@ -1,0 +1,313 @@
+@font-face{
+	font-family:'Bellerose';
+	src:url('fonts/Bellerose.ttf');
+}
+
+@font-face{
+	font-family:'TitilReg';
+	src:url('fonts/TitilliumWeb-Regular.ttf');
+}
+
+@font-face{
+	font-family:'TitilLig';
+	src:url('fonts/TitilliumWeb-Light.ttf');
+}
+
+body{
+	font-family:'TitilLig', sans-serif;
+	color: white;
+	font-size:75%;
+	width: 100%;
+	min-height:100%;
+	overflow:none;
+	background-image: url(img/bg.jpg);
+	background-size: cover;
+}
+
+img{
+	border: none;	
+}
+
+h1,h2,h3,h4,h5{
+	color: white;
+	font-family: Bellerose;
+}
+
+a, a:visited {
+	text-decoration:none;
+	color:white;
+}
+
+ul {
+	display:inline-block;
+	list-style:none;
+	padding:0;
+}
+
+header{
+	font-family: Bellerose;
+	font-size: 20px;
+	height: 60px;
+	background-color: rgba(0,0,0,0.7);
+	margin-bottom: 2%;
+	}
+
+
+#logo{
+	height: 50px;
+	width: 100px;
+}
+
+#notifications{
+	float: right;
+	margin-right: 2%;
+	height:40px;
+	width: 40px;
+}
+
+#settings{
+	background-size: cover;
+	height: 30px;
+	width: 30px;
+	float: right;
+	margin-right: 2%;
+}
+
+#logout{
+	float: right;
+	margin-right: 3%;
+}
+
+#stats{
+	text-align: center;
+	font-family: Bellerose;
+	font-size: 20px;
+	background-color: rgba(0,0,0,0.4);
+	float: right;
+	width: 12%;
+	margin: auto;
+/* 	padding: 2%; */
+	margin-right: 1%;
+	margin-left: 1%;
+	line-height: 55px;
+}
+
+#stats li{
+	margin:5px 0;
+}
+
+.round{
+	height: 70px;
+	width: 70px;
+	border-radius: 50px;
+}
+
+.red{
+	background-color: rgba(231,76,60,0.5);
+}
+
+.orange{
+	background-color: rgba(255,128,49,0.5);
+}
+
+.menuPts{
+	background-color: black;
+}
+
+li.menuPts p{
+	position: relative;
+	top: 10px;
+}
+
+ul.stats_one li p{
+	font-size: 25px;
+}
+
+.mood{
+	height: 80px;
+	width: 80px;
+	background-image: url('img/smile1.png');
+	background-size: cover;	
+}
+
+nav{
+	float: left;
+/* 	width: 12%;	 */
+	margin-left: 3%;
+	margin-right: 1%;
+	margin-top: 5%;
+	
+	
+	
+	
+	
+/* 	border: 1px solid blue; */
+}
+
+nav li{
+	margin: 10px;
+}
+
+nav li a{
+	display: block;
+	height: 80px;
+	width:80px;
+}
+
+#nous{
+	background-image: url('img/nous.png');
+	background-size: cover;
+	}
+#nous:hover{
+	background-image: url('img/nousH.png');
+	background-size: cover;
+}
+
+#chat{	
+	background-image: url('img/chat.png');
+	background-size: cover;
+}
+
+#chat:hover{	
+	background-image: url('img/chatH.png');
+	background-size: cover;
+}
+
+#tabou{
+	background-image: url('img/tabou.png');
+	background-size: cover;
+}
+
+#tabou:hover{
+	background-image: url('img/tabouH.png');
+	background-size: cover;
+}
+
+#coquin{
+	background-image: url('img/coquin.png');
+	background-size: cover;
+}
+
+#coquin:hover{
+	background-image: url('img/coquinH.png');
+	background-size: cover;
+}
+
+#punching{
+	border: 1px solid black;
+	margin: auto;
+}
+
+.main{
+	box-sizing: border-box;
+	background: rgba(0,0,0,0.5);
+	width: 70%;
+	min-height: 550px;
+	margin: auto;
+	padding: 2%;
+	
+	
+	
+	
+	
+/* 	border: 1px solid green; */
+}
+#game{
+	width: 65%;
+	margin: auto;
+}
+
+#buttons{
+	text-align: center;
+}
+
+#punching_jeu{
+}
+
+#punching_img{
+	height: 400px;
+	margin:auto;
+}
+
+#scores{
+	float: right;
+	margin-left: 20px;
+}
+
+#scores h3{
+	font-family: TitilLig;	
+}
+
+#punching_score, #punching_timing{
+	display: block;
+	height: 60px;
+	width: 60px;
+	border-radius: 80px;
+	background-position:center center;
+}
+
+#punching_scorep, #punching_timingp{
+	position: relative;
+	top:5px;
+	font-size: 30px;
+	text-align: center;
+}
+
+.flechette{
+	position: absolute;
+}
+
+button.OrgBorder{
+	font-family: Bellerose;
+	/*
+height: 30px;
+	line-height: 6px;
+	position: relative;
+*/
+	font-size: 20px;
+	background: transparent;
+	border: 1px solid #ff7e30;
+	color: white;
+}
+
+button.padd{
+		padding: 0 50px 0 50px;
+}
+
+.OrgBorder{
+	border: 1px solid #ff7e30;
+}
+
+#pop_send{
+	z-index: 100000000;
+	background: rgba(0,0,0,0.6);
+	width: 40%;
+	height: 40%;
+	padding: 2%;
+	position: absolute;
+	left: 30%;
+	top: 30%;
+}
+
+#pop_send textarea{
+	width: 100%;
+	background: rgba(0,0,0,0.6);
+	resize: none;
+	margin-bottom: 10px;
+}
+
+#truc{
+	text-align: center;
+}
+
+footer{
+	width: 100%;
+	background-color: rgba(0,0,0,0.7);
+	position: fixed;
+	bottom: 0;
+}
+
+footer p{
+	float: right;
+	margin-right: 10%;
+}
