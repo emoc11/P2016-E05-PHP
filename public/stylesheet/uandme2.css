@@ -1,3 +1,14 @@
+body{
+	font-family:'TitilLig', sans-serif;
+	color: white;
+	font-size:75%;
+	width: 100%;
+	min-height:100%;
+	overflow:none;
+	background-image: url(img/bg.jpg);
+	background-size: cover;
+}
+
 @font-face{
 	font-family:'Bellerose';
 	src:url('fonts/Bellerose.ttf');
@@ -11,17 +22,6 @@
 @font-face{
 	font-family:'TitilLig';
 	src:url('fonts/TitilliumWeb-Light.ttf');
-}
-
-body{
-	font-family:'TitilLig', sans-serif;
-	color: white;
-	font-size:75%;
-	width: 100%;
-	min-height:100%;
-	overflow:none;
-	background-image: url(img/bg.jpg);
-	background-size: cover;
 }
 
 img{
@@ -311,3 +311,5 @@ footer p{
 	float: right;
 	margin-right: 10%;
 }
+
+/* Page infos personelles*/

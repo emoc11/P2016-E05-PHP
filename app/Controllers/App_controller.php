@@ -17,6 +17,10 @@ class App_controller extends Controller{
         $f3->set('calendar_name',$this->model->calendrier(array('couples_id'=>$params['couples_id'])));
         $this->tpl=array('render'=>'calendrier.html');
     }
+    
+    function infos($f3){
+        $this->tpl=array('render'=>'infos.html');
+    }
 
     function image_punching($f3){
         if($_FILES['files']['error'] == 0) {
