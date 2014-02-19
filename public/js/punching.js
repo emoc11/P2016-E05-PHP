@@ -2,6 +2,14 @@ $(document).ready(function(){
 	var score = 0;
 	var started=false;
 	var rage;
+	
+	
+	
+	var parent=$(".active").parent();
+	$(".active").css('height','90px');
+	$(".active").css('width','90px');
+	$(".active").css('background-image','url(\'app/Views/img/tabouH.png\')');
+	
 	$("#pop_send").hide();
 	$("#send").hide();
 	$("#punch").on('click',function(){

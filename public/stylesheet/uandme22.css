@@ -47,7 +47,7 @@ ul {
 header{
 	font-family: Bellerose;
 	font-size: 20px;
-	height: 80px;
+	height: 100px;
 	width: 101%;
 	margin-left: -5px;
 	background-color: rgba(0,0,0,0.7);
@@ -55,27 +55,27 @@ header{
 	-webkit-transform: rotate(-1deg);
 	-moz-transform: rotate(-1deg);
 	margin-top: -20px;
-	margin-bottom: 20px;
+	margin-bottom: 15px;
 }
 
 header p{
 	-webkit-transform: rotate(1deg);
 	-moz-transform: rotate(1deg);
-	padding-top: 30px;
+	padding-top: 40px;
 	padding-left: 4%;
 }
 
 
 #logo{
-	height: 40px;
+	height: 50px;
 	width: 100px;
 }
 
 #notifications{
 	float: right;
 	margin-right: 2%;
-	height:30px;
-	width: 30px;
+	height:40px;
+	width: 40px;
 }
 
 #settings{
@@ -90,14 +90,14 @@ header p{
 	float: right;
 	margin-right: 3%;
 	margin-top: -8px;
-	font-size: 20px;
+	font-size: 25px;
 }
 
 
 #stats{
 	text-align: center;
 	font-family: Bellerose;
-	font-size: 15px;
+	font-size: 20px;
 	background-color: rgba(0,0,0,0.4);
 	float: right;
 	width: 15%;
@@ -112,13 +112,13 @@ header p{
 }
 
 #us{
-	font-size: 20px;
+	font-size: 30px;
 	margin: 0;
 }
 
 .round{
-	height: 60px;
-	width: 60px;
+	height: 65px;
+	width: 65px;
 	border-radius: 50px;
 }
 
@@ -136,7 +136,7 @@ header p{
 
 li.menuPts p{
 	position: relative;
-	top: 15px;
+	top: 10px;
 }
 
 ul.stats_one{
@@ -144,12 +144,12 @@ ul.stats_one{
 }
 
 ul.stats_one li p{
-	font-size: 15px;
+	font-size: 20px;
 }
 
 .mood{
-	height: 60px;
-	width: 60px;
+	height: 65px;
+	width: 65px;
 	background-image: url('img/smile1.png');
 	background-size: cover;	
 }
@@ -157,11 +157,9 @@ ul.stats_one li p{
 nav{
 	float: left;
 /* 	width: 12%;	 */
-	/*
-margin-left: 2%;
+	margin-left: 2%;
 	margin-right: 1%;
 	margin-top: 5%;
-*/
 	
 	
 	
@@ -176,74 +174,48 @@ nav li{
 
 nav li a{
 	display: block;
-	height: 70px;
-	width:70px;
+	height: 80px;
+	width:80px;
 }
 
 #nous{
-	height: 70px;
-	width: 70px;
 	background-image: url('img/nous.png');
 	background-size: cover;
 	}
-/*
-	
-li#nous.itemMenu a.active{
-	height: 80px;
-	width: 80px;
+#nous:hover{
 	background-image: url('img/nousH.png');
 	background-size: cover;
 }
-*/
 
 #chat{	
-	height: 70px;
-	width: 70px;
 	background-image: url('img/chat.png');
 	background-size: cover;
 }
-/*
 
-li#chat.itemMenu a.active{	
-height: 80px;
-	width: 80px;
+#chat:hover{	
 	background-image: url('img/chatH.png');
 	background-size: cover;
 }
-*/
 
 #tabou{
-	height: 70px;
-	width: 70px;
 	background-image: url('img/tabou.png');
 	background-size: cover;
 }
-/*
 
-li#tabou.itemMenu a.active{
-	height: 80px;
-	width: 80px;
-	padding-bottom: 10px;
+#tabou:hover{
 	background-image: url('img/tabouH.png');
 	background-size: cover;
 }
-*/
 
 #coquin{
-	height: 70px;
-	width: 70px;
 	background-image: url('img/coquin.png');
 	background-size: cover;
 }
-/*
 
-li#coquin.itemMenu a.active{
-	height: 80px;
-	width: 80px;
+#coquin:hover{
 	background-image: url('img/coquinH.png');
 	background-size: cover;
 }
-*/
 
 #punching{
 	border: 1px solid black;
@@ -254,7 +226,7 @@ li#coquin.itemMenu a.active{
 	box-sizing: border-box;
 	background: rgba(0,0,0,0.5);
 	width: 65%;
-	min-height: 75%;
+	min-height: 580px;
 	padding: 1% 2%;
 	margin-left: 13%;	
 	
@@ -286,7 +258,7 @@ li#coquin.itemMenu a.active{
 }
 
 #punching_img{
-	max-height: 60%;
+	max-height: 480px;
 	max-width: 430px;
 	float: left;
 }
@@ -299,23 +271,22 @@ li#coquin.itemMenu a.active{
 
 #scores h3{
 	font-family: TitilLig;
-	font-size: 15px;
-	margin-left: 9px;	
-	margin-bottom: 0;
+	font-size: 20px;
+	margin-left: 10px;	
 }
 
 #punching_score, #punching_timing{
 	display: block;
-	height: 60px;
-	width: 60px;
+	height: 85px;
+	width: 85px;
 	border-radius: 80px;
 	background-position:center center;
 }
 
 #punching_scorep, #punching_timingp{
 	position: relative;
-	top:12px;
-	font-size: 20px;
+	top:15px;
+	font-size: 30px;
 	text-align: center;
 }
 
@@ -325,9 +296,12 @@ li#coquin.itemMenu a.active{
 
 button.OrgBorder{
 	font-family: Bellerose;
-	font-size: 17px;
-	height: 25px;
-	line-height: 10px;
+	/*
+height: 30px;
+	line-height: 6px;
+	position: relative;
+*/
+	font-size: 20px;
 	background: transparent;
 	border: 1px solid #ff7e30;
 	color: white;
@@ -349,7 +323,7 @@ button[disabled=disabled]{
 }
 
 #pop_send{
-	z-index: 10;
+	z-index: 100000000;
 	background: rgba(0,0,0,0.6);
 	width: 40%;
 	height: 40%;
@@ -366,8 +340,7 @@ button[disabled=disabled]{
 	margin-bottom: 10px;
 }
 
-#pop_send_btn{
-	width: 100%;
+#truc{
 	text-align: center;
 }
 
@@ -375,7 +348,7 @@ footer{
 	-webkit-transform: rotate(-2deg);
 	-moz-transform: rotate(-2deg);
 	width: 120%;
-	height: 140px;
+	height: 200px;
 	background-color: rgba(0,0,0,0.7);
 	position: fixed;
 	bottom: 0;
@@ -385,7 +358,7 @@ footer{
 
 footer p{
 	position: absolute;
-	top:20px;
+	top:50px;
 	right:100px;
 	-webkit-transform: rotate(2deg);
 	-moz-transform: rotate(2deg);
