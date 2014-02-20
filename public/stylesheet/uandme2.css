@@ -9,6 +9,12 @@ body{
 	background-size: cover;
 }
 
+#ajouter_event p {
+	font-style: normal;
+	font-size: 50px;
+	line-height: 50px;
+}
+
 @font-face{
 	font-family:'Bellerose';
 	src:url('fonts/Bellerose.ttf');
@@ -389,6 +395,65 @@ footer p{
 	right:100px;
 	-webkit-transform: rotate(2deg);
 	-moz-transform: rotate(2deg);
+}
+
+/* Page Calendrier */
+
+.jour_calendar {
+	padding: 5px 10px 0 10px;
+	display: inline-block;
+	background: rgba(255,255,255,.1);
+	text-align: center;
+	vertical-align: top;
+	border-radius: 3px;
+}
+
+.jour_calendar + .jour_calendar {
+	margin-left: 10px;
+}
+
+#popup_ajout_event {
+	position: absolute;
+	top: 35%;
+	left: 35%;
+	padding: 20px;
+	background: rgba(255,255,255,.2);
+	display:none;
+}
+
+#popup_ajout_event h2 {
+	line-height: 30px;
+	margin-bottom: 30px;
+}
+
+#popup_ajout_event input {
+	display: block;
+	color: black;
+	width: 95%;
+	margin: 10px auto 0 auto;
+}
+
+#fermer_popup {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	font-size: 15px;
+	color:rgba(231,76,60,0.5);
+}
+
+#fermer_popup a {
+	color:rgba(231,76,60,0.5);
+}
+
+#fond_noir_popup {
+	display:none;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,.5);
+	position: absolute;
+	z-index:;
+	top:0;
+	left:0;
 }
 
 /* Page infos personelles*/
