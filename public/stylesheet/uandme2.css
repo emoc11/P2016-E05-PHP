@@ -449,33 +449,18 @@ select{
 	background: rgba(0,0,0,0.3);
 }
 
-.searchBar {
-	width:30%;
-	height:15%;
-	background-color:blue;
-	display:inline;
-}
-
-.searchZone {
-	width:70%;
-}
-
-#album h1 {
-	display:inline-block;
-	color:red;
-	width:70%;
-
-}
-
+/*.albumGeneral
+{ 
+clear:both;
+}*/
 
 .columnAlbum {
 	margin-top:;
-	width:20%;
+	width:23%;
 	margin:2%;
 	display:inline-block;
 	min-height:20px;
 	background-color:rgba(22, 22, 22, 0.8);
-	
 }
 
 
@@ -500,6 +485,41 @@ select{
 	padding-left:2.5%;
 	padding-right:2.5%;
 
+}
+
+.searching {
+	background-color:rgba(22, 22, 22, 0.8);
+	padding:1%;
+	display:inline;
+	width:22%;
+}
+
+.searching input {
+	background-color:black;
+	border-radius:5px;
+	border:none;
+}
+
+.searching input::-webkit-input-placeholder {
+    color:#a39594;
+    text-align:center;
+}
+ 
+.searching input:-moz-placeholder {
+    color:#a39594;
+    text-align:center;
+}
+
+.searching input {
+    color:#a39594;
+    text-align:center;
+}
+
+
+#album h1
+{ 
+	display:inline-block;
+	width:68%;
 }
 
 
