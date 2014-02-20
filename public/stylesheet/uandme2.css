@@ -9,6 +9,12 @@ body{
 	background-size: cover;
 }
 
+#ajouter_event p {
+	font-style: normal;
+	font-size: 50px;
+	line-height: 50px;
+}
+
 @font-face{
 	font-family:'Bellerose';
 	src:url('fonts/Bellerose.ttf');
@@ -387,6 +393,65 @@ footer p{
 	-moz-transform: rotate(2deg);
 }
 
+/* Page Calendrier */
+
+.jour_calendar {
+	padding: 5px 10px 0 10px;
+	display: inline-block;
+	background: rgba(255,255,255,.1);
+	text-align: center;
+	vertical-align: top;
+	border-radius: 3px;
+}
+
+.jour_calendar + .jour_calendar {
+	margin-left: 10px;
+}
+
+#popup_ajout_event {
+	position: absolute;
+	top: 35%;
+	left: 35%;
+	padding: 20px;
+	background: rgba(255,255,255,.2);
+	display:none;
+}
+
+#popup_ajout_event h2 {
+	line-height: 30px;
+	margin-bottom: 30px;
+}
+
+#popup_ajout_event input {
+	display: block;
+	color: black;
+	width: 95%;
+	margin: 10px auto 0 auto;
+}
+
+#fermer_popup {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	font-size: 15px;
+	color:rgba(231,76,60,0.5);
+}
+
+#fermer_popup a {
+	color:rgba(231,76,60,0.5);
+}
+
+#fond_noir_popup {
+	display:none;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,.5);
+	position: absolute;
+	z-index:;
+	top:0;
+	left:0;
+}
+
 /* Page infos personelles*/
 
 #lettrine{
@@ -570,3 +635,78 @@ select{
   opacity: 1; /* coche opaque */  
   transform: scale(1); /* mise à l'échelle 1:1 */  
 }
+
+/*.albumGeneral
+{ 
+clear:both;
+}*/
+
+.columnAlbum {
+	margin-top:;
+	width:23%;
+	margin:2%;
+	display:inline-block;
+	min-height:20px;
+	background-color:rgba(22, 22, 22, 0.8);
+}
+
+
+.hashtag {
+	font-family:Bellerose;
+	font-size:1.5em;
+	color:#c34b42;
+	margin-left:3%;
+
+}
+
+.albumDate {
+	color:#edd9d7;
+	font-size:1.1em;
+	margin-left:10%;
+	margin-top:1%;
+	margin-bottom:15%;
+}
+
+.boxPhoto img {
+	padding-top:2.5%;
+	padding-left:2.5%;
+	padding-right:2.5%;
+
+}
+
+.searching {
+	background-color:rgba(22, 22, 22, 0.8);
+	padding:1%;
+	display:inline;
+	width:22%;
+}
+
+.searching input {
+	background-color:black;
+	border-radius:5px;
+	border:none;
+}
+
+.searching input::-webkit-input-placeholder {
+    color:#a39594;
+    text-align:center;
+}
+ 
+.searching input:-moz-placeholder {
+    color:#a39594;
+    text-align:center;
+}
+
+.searching input {
+    color:#a39594;
+    text-align:center;
+}
+
+
+#album h1
+{ 
+	display:inline-block;
+	width:68%;
+}
+
+

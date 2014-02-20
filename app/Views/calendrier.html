@@ -1,8 +1,8 @@
 <!doctype html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
      <base href="<?php echo $BASE; ?>/" />
 
     <title>U &amp; ME</title>
@@ -19,83 +19,62 @@
 <body class="clearfix">
 
   <header>
-	  <img src="" id="logo" alt="U&ME"/>
-	  <a id="logout">Déconnexion</a>
-	  <img src="" id="notifications" alt="notif"/>
+    <p>
+      <img src="" id="logo" alt="U&ME"/>
+      <a id="logout">Déconnexion</a>
+      <img src="<?php echo $IMG; ?>settings.png" id="settings" alt="settings"/>
+      <img src="" id="notifications" alt="notif"/>
+    </p>
   </header>
 
   <nav>
-  	<ul>
-  	<li class="itemMenu" id="nous"><a href="nous"></a></li>
-  	<li class="itemMenu" id="chat"><a href="nous"></a></li>
-  	<li class="itemMenu" id="tabou"><a href="nous"></a></li>
-  	<li class="itemMenu" id="coquin"><a href="nous"></a></li>
-  	</ul>
+    <ul>
+    <li class="itemMenu" id="nous"><a href="infos"></a></li>
+    <li class="itemMenu" id="chat"><a href="chat"></a></li>
+    <li class="itemMenu active" id="tabou"><a href="tabou"></a></li>
+    <li class="itemMenu" id="coquin"><a href="coquin"></a></li>
+    </ul>
   </nav>
 
   <section id="stats">
         <ul class="stats_one">
-        	<li>MOI</li>
-        	<li class="mood round red"></li>
-        	<li class="menuPts round">1200</li>
+            <li><p id="us">MOI</p></li>
+            <li class="mood round red"></li>
+            <li class="menuPts round"><p>1200</p></li>
         </ul>
         <ul class="stats_one">
-        	<li>TOI</li>
-        	<li class="mood round orange"></li>
-        	<li class="menuPts round">1280</li>
+            <li><p id="us">TOI</p></li>
+            <li class="mood round orange"></li>
+            <li class="menuPts round"><p>1280</p></li>
         </ul>
   </section>
 
   <section class="main" id='calendrier'>
-    	<h2>Calendrier</h2>
-        <?php
-            require_once 'Google/Client.php';
-            require_once 'Google/Service/Calendar.php';
+        <h2>Calendrier</h2>
+        <ul id='events'>Chargement...</ul>
 
-            $scriptUri = "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']."";
-
-            $client = new Google_Client();
-            $client->setAccessType('offline');
-            $client->setApplicationName('uandme');
-            $client->setClientId('1094307263361-6q6u8m0ljv8fdor650pji75a7m5sjbfh.apps.googleusercontent.com');
-            $client->setClientSecret('JgD23-O8hMeIV_uK5Fo85xuN');
-            $client->setRedirectUri($scriptUri);
-            $client->setDeveloperKey('AIzaSyBHpfRmJmv5R9eS93EiIhcbz1fBy2Ix8q0');
-            $client->setScopes('https://www.googleapis.com/auth/calendar');
-
-            $service = new Google_Service_Calendar($client);
-
-            if (isset($_GET['logout'])) {
-                unset($_SESSION['token']);
-                die('Logged out.');
-            }
-
-            if (isset($_GET['code'])) {
-                $client->authenticate($_GET['code']);
-                $_SESSION['token'] = $client->getAccessToken();
-            }
-
-            if (isset($_SESSION['token'])) {
-                $token = $_SESSION['token'];
-                $client->setAccessToken($token);
-            }
-
-            if (!$client->getAccessToken()) {
-                $authUrl = $client->createAuthUrl();
-                header("Location: ".$authUrl);
-                die;
-            }
-        ?>
-
+        <div id='fond_noir_popup'></div>
+        <div id='popup_ajout_event'>
+            <div id='fermer_popup'><a href='#'>fermer</a></div>
+            <h2>Ajout d'évènement</h2>
+            <form method="post" action="calendrier/ajout">
+                <input type="text" name="nom_event" id='nom_event' placeholder='Titre' />
+                <input type="date" name="date_event" id='date_event' placeholder="<?php echo date("y-d-m") ?>" />
+                <input type="submit" id='envoi_ajout_event' name="submitPhoto" value="Ajouter" />
+            </form>
+        </div>
   </section>
 
 
     <footer>
-    	<p>Mentions légales - Copyright</p>
+        <p>Mentions légales - Copyright</p>
     </footer>
 
-    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <!-- JS pour google calendar API v3 -->
     <script type="text/javascript" src="public/js/calendrier.js"></script>
+    <script src="https://apis.google.com/js/client.js?onload=handleClientLoad"></script>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script type="text/javascript" src="public/js/foundation/foundation.js"></script>
 </body>
 </html>
