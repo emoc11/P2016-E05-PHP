@@ -1,0 +1,21 @@
+{
+"header":[
+<?php if(isset($header)): ?>
+  "code":"<?php echo $header['code']; ?>",
+  "status":"<?php echo $header['status']; ?>",
+  "text":"<?php echo $header['text']; ?>"
+<?php endif; ?>
+],
+"body":[
+<?php if(isset($users)): ?>
+<?php foreach($users as $user):?>
+{
+"users_id":"<?php echo $user->users_id;?>",
+"email":"<?php echo $user->email;?>",
+"pseudo":"<?php echo $user->pseudo;?>",
+"user_url":"<?php echo 'http://'.$_SERVER['HTTP_HOST'].'api/users/'.$user->users_id; ?>"
+},
+<?php endforeach;?>
+<?php endif; ?>
+]
+}
