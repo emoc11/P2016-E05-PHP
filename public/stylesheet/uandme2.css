@@ -37,6 +37,13 @@ a, a:visited {
 	text-decoration:none;
 	color:white;
 }
+/*
+
+input{
+	-webkit-appearance: none;	
+	-moz-appearance: none;
+}
+*/
 
 ul {
 	display:inline-block;
@@ -186,15 +193,13 @@ nav li a{
 	background-image: url('img/nous.png');
 	background-size: cover;
 	}
-/*
 	
-li#nous.itemMenu a.active{
+#nous:hover{
 	height: 80px;
 	width: 80px;
 	background-image: url('img/nousH.png');
 	background-size: cover;
 }
-*/
 
 #chat{	
 	height: 70px;
@@ -202,15 +207,13 @@ li#nous.itemMenu a.active{
 	background-image: url('img/chat.png');
 	background-size: cover;
 }
-/*
 
-li#chat.itemMenu a.active{	
-height: 80px;
+#chat:hover{	
+	height: 80px;
 	width: 80px;
 	background-image: url('img/chatH.png');
 	background-size: cover;
 }
-*/
 
 #tabou{
 	height: 70px;
@@ -218,16 +221,14 @@ height: 80px;
 	background-image: url('img/tabou.png');
 	background-size: cover;
 }
-/*
 
-li#tabou.itemMenu a.active{
+#tabou:hover{
 	height: 80px;
 	width: 80px;
 	padding-bottom: 10px;
 	background-image: url('img/tabouH.png');
 	background-size: cover;
 }
-*/
 
 #coquin{
 	height: 70px;
@@ -235,15 +236,13 @@ li#tabou.itemMenu a.active{
 	background-image: url('img/coquin.png');
 	background-size: cover;
 }
-/*
 
-li#coquin.itemMenu a.active{
+#coquin:hover{
 	height: 80px;
 	width: 80px;
 	background-image: url('img/coquinH.png');
 	background-size: cover;
 }
-*/
 
 #punching{
 	border: 1px solid black;
@@ -282,11 +281,8 @@ li#coquin.itemMenu a.active{
 }
 
 
-#punching_jeu{
-}
-
 #punching_img{
-	max-height: 60%;
+	max-height: 480px;
 	max-width: 430px;
 	float: left;
 }
@@ -344,7 +340,7 @@ button[disabled=disabled]{
 	
 }
 
-.OrgBorder{
+.orgBorder{
 	border: 1px solid #ff7e30;
 }
 
@@ -393,32 +389,94 @@ footer p{
 
 /* Page infos personelles*/
 
+#lettrine{
+	position: absolute;
+	top:12%;
+	left: 28%;
+	z-index:1;	
+}
+
 #infosPersos{
-	width: 50%;
-	font-family: Bellerose;	
+	width: 45%;
+	padding: 2%;
+	font-family: Bellerose;
+	margin:auto;
+	margin-top: 20px;
+	z-index: 30;	
 }
 
 #infosPersos h1{
-	padding-bottom: 3%;
+}
+
+#infosPersos input{
+	border: none;
+	background: rgba(0,0,0,0.6);
+}
+
+#infosPersos{
+	font-family: 20px;
+}
+
+#nom{
+	margin-top: 30px;
+	height: 35px;
+	margin-bottom: 30px;
+	width: 250px;
+	padding-left: 5px;
+}
+#sexeF+label,#sexeH+label{
+	font-size: 20px;
+	margin-left: 10px;
+	margin-right: 20px;
+}
+
+#nom::-webkit-input-placeholder{
+	height: 20px;
+	font-size: 18px;
+	font-style: italic;
+	padding-left: 5px;
+}
+
+#nom::-moz-placeholder {
+	height: 20px;
+	font-size: 18px;
+	font-style: italic;
+	padding-left: 5px;
 }
 
 #profilePic{
 	float: right;
+	margin-top: -100px;
 	height: 150px;
 	width: 150px;
-	padding: 40px 20px;
-	border: 2px dashed orange;
+	padding: 30px 20px;
+	border: 2px dashed rgba(255,128,49,0.9);
 	text-align: center;
+	font-family: TitilReg;
+}
+#profilePic img{
+	height: 30px;
+	width: 30px;
+	margin-bottom: 10px;
+}
+
+label[for=birthDay],label[for=meetDay]{
+	font-size: 20px;
+	margin-right: 5px;
 }
 
 #dates{
-	width: 70%;
+	width: 80%;
 	float: left;
+	margin-top: 20px;
+	margin-bottom: 30px;
 }
 
 #dates select{
-	width: 70px;
-	font-family: Bellerose;
+	padding: 2px;
+	width: 80px;
+	margin: 5px;
+	font-size: 15px;
 }
 
 select{
@@ -433,18 +491,82 @@ select{
 }
 
 #chooseBgPic{
-	padding:60px 10px;
-	height: 200px;
+	padding:40px 10px;
+	height: 150px;
 	width: 250px;
-	border: 2px dashed orange;
+	border: 2px dashed rgba(255,128,49,0.9);
 	text-align: center;
+	font-family: TitilReg;
+}
+
+#chooseBgPic img{
+	height: 30px;
+	width: 30px;
+	margin-bottom: 10px;
 }
 
 
 #validBgPic{
-	margin-left: 300px;
+	height: 80px;
+	float: right;
+	font-size: 18px;
 	text-align: center;
-	padding: 10px;
-	width: 200px;
+	padding: 5px 10px;
+	width: 220px;
 	background: rgba(0,0,0,0.3);
+	margin-top: -120px;
+	margin-right: 10%;
+}
+
+#validInfos{
+	width: 100px;
+	margin-top: 30px;
+	margin-left: 40%;
+}
+
+/* Cachons la case à cocher */  
+[type="radio"]:not(:checked),  
+[type="radio"]:checked {  
+  position: absolute;  
+  left: -9999px;  
+}  
+   
+/* on prépare le label */  
+[type="radio"]:not(:checked) + label,  
+[type="radio"]:checked + label {  
+  position: relative; /* permet de positionner les pseudo-éléments */  
+  padding-left: 25px; /* fait un peu d'espace pour notre case à venir */  
+}
+
+/* Aspect des radioes */  
+/* :before sert à créer la case à cocher */  
+[type="radio"]:not(:checked) + label:before,  
+[type="radio"]:checked + label:before {  
+  content: '';  
+  position: absolute;  
+  left:0; top: 16px;  
+  width: 18px; height: 18px; /* dim. de la case */  
+  background: transparent;  
+  border-radius: 10px; /* angles arrondis */  
+  border: 2px solid rgba(231,76,60,1); 
+}  
+   
+/* Aspect général de la coche */  
+[type="radio"]:not(:checked) + label:after,  
+[type="radio"]:checked + label:after {  
+  content: '\2022';  
+  position: absolute;  
+  top: -40px; left: 0px;  
+  color: rgba(231,76,60,1); 
+  font-size: 87px; 
+}  
+/* Aspect si "pas cochée" */  
+[type="radio"]:not(:checked) + label:after {  
+  opacity: 0; /* coche invisible */  
+  transform: scale(0); /* mise à l'échelle à 0 */  
+}  
+/* Aspect si "cochée" */  
+[type="radio"]:checked + label:after {  
+  opacity: 1; /* coche opaque */  
+  transform: scale(1); /* mise à l'échelle 1:1 */  
 }

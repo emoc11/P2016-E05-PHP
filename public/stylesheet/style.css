@@ -41,8 +41,8 @@ body, button, input, select, textarea { font-family: sans-serif; color: white; }
  * Also: hot pink!
  */
 
-::-moz-selection { background: #fe57a1; color: #fff; text-shadow: none; }
-::selection { background: rgba(255,128,49,0.40); color: #fff; text-shadow: none; }
+::-moz-selection { background: rgba(0,0,0,0.2); color: #fff; text-shadow: none; }
+::selection { background: rgba(0,0,0,0.2); color: #fff; text-shadow: none; }
 
 
 /* =============================================================================
