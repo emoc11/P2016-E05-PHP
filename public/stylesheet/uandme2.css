@@ -448,3 +448,58 @@ select{
 	width: 200px;
 	background: rgba(0,0,0,0.3);
 }
+
+.searchBar {
+	width:30%;
+	height:15%;
+	background-color:blue;
+	display:inline;
+}
+
+.searchZone {
+	width:70%;
+}
+
+#album h1 {
+	display:inline-block;
+	color:red;
+	width:70%;
+
+}
+
+
+.columnAlbum {
+	margin-top:;
+	width:20%;
+	margin:2%;
+	display:inline-block;
+	min-height:20px;
+	background-color:rgba(22, 22, 22, 0.8);
+	
+}
+
+
+.hashtag {
+	font-family:Bellerose;
+	font-size:1.5em;
+	color:#c34b42;
+	margin-left:3%;
+
+}
+
+.albumDate {
+	color:#edd9d7;
+	font-size:1.1em;
+	margin-left:10%;
+	margin-top:1%;
+	margin-bottom:15%;
+}
+
+.boxPhoto img {
+	padding-top:2.5%;
+	padding-left:2.5%;
+	padding-right:2.5%;
+
+}
+
+
