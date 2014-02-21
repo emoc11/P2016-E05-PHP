@@ -702,6 +702,7 @@ clear:both;
 	display:inline-block;
 	min-height:20px;
 	background-color:rgba(22, 22, 22, 0.8);
+	vertical-align:center;
 }
 
 
