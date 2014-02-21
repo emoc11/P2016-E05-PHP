@@ -697,12 +697,12 @@ clear:both;
 
 .columnAlbum {
 	margin-top:;
-	width:23%;
-	margin:2%;
+	width:25%;
+	padding:2%;
 	display:inline-block;
 	min-height:20px;
 	background-color:rgba(22, 22, 22, 0.8);
-	vertical-align:center;
+	float:left;
 }
 
 
