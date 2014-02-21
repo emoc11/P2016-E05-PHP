@@ -56,10 +56,13 @@
         <div id='fond_noir_popup'></div>
         <div id='popup_ajout_event'>
             <div id='fermer_popup'><a href='#'>fermer</a></div>
-            <h2>Ajout d'évènement</h2>
+            <h1>Ajout d'évènement</h1>
+            <p id='erreur_ajout_event'></p>
             <form method="post" action="calendrier/ajout">
-                <input type="text" name="nom_event" id='nom_event' placeholder='Titre' />
-                <input type="date" name="date_event" id='date_event' placeholder="<?php echo date("y-d-m") ?>" />
+                <input type="text" name="nom_event" id='nom_event' placeholder='Titre*' />
+                <input type="date" name="date_event" id='date_event' placeholder="<?php echo date("Y-d-m") ?>*" />
+                <input type="text" name="loc_event" id='loc_event' placeholder="Lieu" />
+                <textarea name='desc_event' id='desc_event' placeholder="Description"></textarea>
                 <input type="submit" id='envoi_ajout_event' name="submitPhoto" value="Ajouter" />
             </form>
         </div>

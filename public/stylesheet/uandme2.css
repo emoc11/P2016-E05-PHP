@@ -396,9 +396,9 @@ footer p{
 /* Page Calendrier */
 
 .jour_calendar {
-	padding: 5px 10px 0 10px;
+	padding: 5px 10px;
 	display: inline-block;
-	background: rgba(255,255,255,.1);
+	background: rgba(0,0,0,.5);
 	text-align: center;
 	vertical-align: top;
 	border-radius: 3px;
@@ -408,13 +408,39 @@ footer p{
 	margin-left: 10px;
 }
 
+.jour_calendar li{
+	list-style-type: disc;
+	list-style-position: inside;
+	text-align: left;
+	color: rgba(231,76,60,0.5);
+}
+
+.jour_calendar li:first-line{
+	color:white;
+}
+
+.jour_calendar p {
+	margin: 0;
+	padding: 0;
+	color: rgba(231,76,60,0.5);
+}
+
+#ajouter_event p{
+	margin: 17px 10px;
+}
+
 #popup_ajout_event {
 	position: absolute;
-	top: 35%;
+	top: 25%;
 	left: 35%;
 	padding: 20px;
-	background: rgba(255,255,255,.2);
+	background: rgba(0,0,0,.7);
 	display:none;
+	min-width: 20%;
+}
+
+#popup_ajout_event textarea {
+	min-width: 100%;
 }
 
 #popup_ajout_event h2 {
@@ -425,8 +451,35 @@ footer p{
 #popup_ajout_event input {
 	display: block;
 	color: black;
-	width: 95%;
+	width: 100%;
 	margin: 10px auto 0 auto;
+	outline: 0;
+	border: 0;
+	padding: 3px;
+}
+
+#popup_ajout_event textarea {
+	display: block;
+	color: black;
+	width: 100%;
+	margin: 10px auto 0 auto;
+	padding: 3px;
+	outline: 0;
+	border: 0;
+}
+
+#popup_ajout_event input[type='submit'] {
+	background: rgba(231, 76, 60, .5);
+	padding: 10px 30px;
+	border: none;
+	transition: background .3s ease-in;
+	color: white;
+	width: auto;
+	float:right;
+}
+
+#popup_ajout_event input[type='submit']:hover {
+	background: rgba(231, 76, 60, .7);
 }
 
 #fermer_popup {
@@ -445,11 +498,12 @@ footer p{
 	display:none;
 	width: 100%;
 	height: 100%;
-	background: rgba(0,0,0,.5);
+	background: rgba(0,0,0,.8);
 	position: absolute;
 	z-index:;
 	top:0;
 	left:0;
+	cursor: pointer;
 }
 
 /* Page infos personelles*/
