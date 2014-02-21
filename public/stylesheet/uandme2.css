@@ -690,10 +690,7 @@ select{
   transform: scale(1); /* mise à l'échelle 1:1 */  
 }
 
-/*.albumGeneral
-{ 
-clear:both;
-}*/
+
 
 .columnAlbum {
 	margin-top:;
@@ -771,4 +768,8 @@ clear:both;
 	width:68%;
 }
 
+#wishlist h1 {
+	width:100%;
+	display:inline-bloxk;
+}
 
