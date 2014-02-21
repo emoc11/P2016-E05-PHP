@@ -740,6 +740,7 @@ clear:both;
 	background-color:black;
 	border-radius:5px;
 	border:none;
+	font-style:italic;
 }
 
 .searching input::-webkit-input-placeholder {
@@ -755,8 +756,14 @@ clear:both;
 .searching input {
     color:#a39594;
     text-align:center;
+
 }
 
+.searching input:hover {
+    text-decoration:none;
+     outline: none;
+    
+}
 
 #album h1
 { 
