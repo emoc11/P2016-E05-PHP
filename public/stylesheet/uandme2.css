@@ -395,18 +395,20 @@ footer p{
 
 /* Page Calendrier */
 
+#calendrier {
+	position: relative;
+}
+
 .jour_calendar {
 	padding: 5px 10px;
 	display: inline-block;
 	background: rgba(0,0,0,.5);
 	text-align: center;
 	vertical-align: top;
-	border-radius: 3px;
+	margin-bottom: 10px;
+	margin-right: 10px;
 }
 
-.jour_calendar + .jour_calendar {
-	margin-left: 10px;
-}
 
 .jour_calendar li{
 	list-style-type: disc;
@@ -422,21 +424,56 @@ footer p{
 .jour_calendar p {
 	margin: 0;
 	padding: 0;
+	color: rgba(255,128,49,0.5);
+}
+
+#info_suppr_popup {
 	color: rgba(231,76,60,0.5);
 }
 
-#ajouter_event p{
-	margin: 17px 10px;
+#ajouter_event {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	background:none;
+	font-size: 70px;
+	color: white;
+	line-height: 40px;
+	transition: color .3s ease-in;
 }
 
-#popup_ajout_event {
+#ajouter_event:hover {
+	color: rgba(255,128,49,0.5);
+}
+
+#info_suppr_popup {
+	color: rgba(231,76,60,0.5);
+}
+
+#popup_info_event h1 {
+	text-align: center;
+	color: rgba(255,128,49,0.5);
+	margin-top: 0;
+	line-height: 0;
+}
+
+#popup_info_event #info_date_event {
+	text-align: center;
+}
+
+#popup_info_event #info_lieu_event:first-line, #popup_info_event #info_desc_event:first-line{
+	color: rgba(231,76,60,0.5);
+}
+
+#popup_ajout_event, #popup_info_event {
 	position: absolute;
-	top: 25%;
-	left: 35%;
+	top: 20%;
+	left: 30%;
 	padding: 20px;
 	background: rgba(0,0,0,.7);
 	display:none;
-	min-width: 20%;
+	min-width: 40%;
+	max-width: 40%;
 }
 
 #popup_ajout_event textarea {
@@ -468,7 +505,7 @@ footer p{
 	border: 0;
 }
 
-#popup_ajout_event input[type='submit'] {
+#popup_ajout_event input[type='submit'], #popup_info_event #info_suppr_popup, #popup_info_event  #info_modif_popup{
 	background: rgba(231, 76, 60, .5);
 	padding: 10px 30px;
 	border: none;
@@ -476,13 +513,18 @@ footer p{
 	color: white;
 	width: auto;
 	float:right;
+	margin-left: 10px;
 }
 
-#popup_ajout_event input[type='submit']:hover {
+#popup_info_event  #info_modif_popup {
+	float:left;
+}
+
+#popup_ajout_event input[type='submit']:hover, #popup_info_event #info_suppr_popup:hover, #popup_info_event  #info_modif_popup:hover{
 	background: rgba(231, 76, 60, .7);
 }
 
-#fermer_popup {
+.fermer_popup {
 	position: absolute;
 	top: 10px;
 	right: 10px;
@@ -490,7 +532,7 @@ footer p{
 	color:rgba(231,76,60,0.5);
 }
 
-#fermer_popup a {
+.fermer_popup a {
 	color:rgba(231,76,60,0.5);
 }
 

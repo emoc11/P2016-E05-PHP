@@ -105,14 +105,14 @@ function makeApiCall() {
             else var date_event = resp.items[i].start.date;
             date_event_tab = date_event.split('-');
             date_event_tab[2] = date_event_tab[2].split('T');
-            date_event = date_event_tab[2][0]+" / "+date_event_tab[1];
+            date_event = date_event_tab[2][0]+" / "+date_event_tab[1]+" / "+date_event_tab[0];
 
             var summary_event = resp.items[i].summary;
 
-            if($("#"+date_event_tab[2][0]).length == 0) {
-              $("<div class='jour_calendar' id='"+date_event_tab[2][0]+"'><p>"+date_event+"<br/><ul><li>"+summary_event+"</li></ul></p></div>").appendTo('#events');
+            if($("#"+date_event_tab[2][0]+date_event_tab[0]).length == 0) {
+              $("<div class='jour_calendar' id='"+date_event_tab[2][0]+date_event_tab[0]+"'><p>"+date_event+"<br/><ul><li><a href='#' class='lien_infos_event' data-id='"+resp.items[i].id+"'>"+summary_event+"</a></li></ul></p></div>").appendTo('#events');
             } else {
-              $("<li>"+summary_event+"</li>").appendTo("#"+date_event_tab[2][0]+" ul");
+              $("<li><a href='#' class='lien_infos_event' data-id='"+resp.items[i].id+"'>"+summary_event+"</a></li>").appendTo("#"+date_event_tab[2][0]+date_event_tab[0]+" ul");
             }
           }
         } else {
@@ -120,10 +120,10 @@ function makeApiCall() {
           erreur.innerHTML = "Aucun évènement trouvé.";
           document.getElementById('events').appendChild(erreur);
         }
-        $("<a class='jour_calendar' id='ajouter_event' href='#'><div><p>+</p></div></a>").appendTo('#events');
       });
     }
 
+    // Création d'un nouvel event --------------------
     function create_new_event(id, nom, date, desc, loc) {
       var request_event_insert = gapi.client.calendar.events.insert({
         
@@ -145,30 +145,96 @@ function makeApiCall() {
       });
     }
 
-    // AUTRES A PLACER ICI
+    // Affichage des infos d'un event --------------------
+    function infos_event(calendar_id, event_id) {
+      var titre = "";
+      var date = "";
+      var lieu = "";
+      var desc = "";
+      var request_event_infos = gapi.client.calendar.events.get({
+        "calendarId": calendar_id,
+        "eventId": event_id
+      });
+      request_event_infos.execute(function(resp) {
+        console.log(resp);
+        // Affichage correct de la date JJ/MM/AAAA
+        if(resp.start.dateTime != undefined) var date_event = resp.start.dateTime;
+        else var date_event = resp.start.date;
+        date_event_tab = date_event.split('-');
+        date_event_tab[2] = date_event_tab[2].split('T');
+        date_event = date_event_tab[2][0]+" / "+date_event_tab[1]+" / "+date_event_tab[0];
 
-    // Evenements on Click formulaires/popup
-    $("#events").on('click', "#ajouter_event", function(e){
+        titre = resp.summary;
+        date = date_event;
+        lieu = resp.location;
+        desc = resp.description;
+
+        // Informations placées, puis affichage de la div remmplie + fond noir
+        $("<h1>"+titre+"</h1>").appendTo('#infos_event');
+        $("<p id='info_date_event'>"+date+"</p>").appendTo('#infos_event');
+        if(lieu != undefined) $("<p id='info_lieu_event'>Lieu<br/>"+lieu+"</p>").appendTo('#infos_event');
+        if(desc != undefined) $("<p id='info_desc_event'>Description<br/>"+desc+"</p>").appendTo('#infos_event');
+        $("#popup_info_event").fadeIn("slow");
+        $("#fond_noir_popup").fadeIn("slow");
+      });
+    }
+
+    // Evenement Formulaires ajout d'event --------------------
+    $("#calendrier").on('click', "#ajouter_event", function(e){
       e.preventDefault();
       $("#popup_ajout_event").fadeIn("slow");
       $("#fond_noir_popup").fadeIn("slow");
       $("#nom_event").val('');
       $("#date_event").val('');
       $("#erreur_ajout_event").html('');
+
+      // Fermeture de la popup au clic sur "fermer"
+      $("#ajout_popup_close").on('click', function(e){
+        e.preventDefault();
+        $("#popup_ajout_event").fadeOut("slow");
+        $("#fond_noir_popup").fadeOut("slow");
+      });
+
+      // Fermeture de la popup si clic sur fond noir
+      $("#fond_noir_popup").on('click', function(e){
+        e.preventDefault();
+        $("#popup_ajout_event").fadeOut("slow");
+        $("#fond_noir_popup").fadeOut("slow");
+      });
     });
 
-    $("#fermer_popup").on('click', function(e){
+    // Evenement ouverture popups d'infos d'event --------------------
+    $('#events').on('click', ".lien_infos_event", function(e){
       e.preventDefault();
-      $("#popup_ajout_event").fadeOut("slow");
-      $("#fond_noir_popup").fadeOut("slow");
-    });
+      var event_id = $(this).data('id');
+      infos_event(calendrier_uandme_id, event_id);
 
-    $("#fond_noir_popup").on('click', function(e){
-      e.preventDefault();
-      $("#popup_ajout_event").fadeOut("slow");
-      $("#fond_noir_popup").fadeOut("slow");
-    });
+      // Fermeture de la popup au clic sur "fermer"
+      $("#info_popup_close").on('click', function(e){
+        e.preventDefault();
+        $("#popup_info_event").fadeOut("slow", function() {
+          $('#infos_event').empty();
+          $('#infos_event').empty();
+          $('#infos_event').empty();
+          $('#infos_event').empty();
+        });
+        $("#fond_noir_popup").fadeOut("slow");
+      });
 
+      // Fermeture de la popup si clic sur fond noir
+      $("#fond_noir_popup").on('click', function(e){
+        e.preventDefault();
+        $("#popup_info_event").fadeOut("slow", function() {
+          $('#infos_event').empty();
+          $('#infos_event').empty();
+          $('#infos_event').empty();
+          $('#infos_event').empty();
+        });
+        $("#fond_noir_popup").fadeOut("slow");
+      });
+    })
+
+    // Verif et transmission des données du form d'ajout d'event vers calendar API --------------------
     $("#envoi_ajout_event").on('click', function(e){
       e.preventDefault();
       var nom = $("#nom_event").val();
