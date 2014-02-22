@@ -126,7 +126,6 @@ function makeApiCall() {
     // Création d'un nouvel event --------------------
     function create_new_event(id, nom, date, desc, loc) {
       var request_event_insert = gapi.client.calendar.events.insert({
-        
         "calendarId": id,
         "resource" :{
           "end":{
@@ -141,7 +140,7 @@ function makeApiCall() {
         }
       });
       request_event_insert.execute(function() {
-        setTimeout(function(){location.reload();},200);
+        setTimeout(function(){location.reload();},100);
       });
     }
 
@@ -168,16 +167,52 @@ function makeApiCall() {
         date = date_event;
         lieu = resp.location;
         desc = resp.description;
+        id = resp.id;
 
         // Informations placées, puis affichage de la div remmplie + fond noir
         $("<h1>"+titre+"</h1>").appendTo('#infos_event');
         $("<p id='info_date_event'>"+date+"</p>").appendTo('#infos_event');
         if(lieu != undefined) $("<p id='info_lieu_event'>Lieu<br/>"+lieu+"</p>").appendTo('#infos_event');
         if(desc != undefined) $("<p id='info_desc_event'>Description<br/>"+desc+"</p>").appendTo('#infos_event');
+        $("#info_suppr_popup").attr("data-id", id);
+        $("#info_modif_popup").attr("data-id", id);
         $("#popup_info_event").fadeIn("slow");
         $("#fond_noir_popup").fadeIn("slow");
       });
     }
+
+    function supprime_event(calendar_id, event_id){
+      var request_event_suppr = gapi.client.calendar.events.delete({
+        "calendarId": calendar_id,
+        "eventId": event_id
+      });
+      request_event_suppr.execute(function() {
+        setTimeout(function(){location.reload();},100);
+      });
+    }
+
+    function modifier_event(calendar_id, event_id, date, nom, desc, loc){
+      var request_event_modif = gapi.client.calendar.events.update({
+        "calendarId": calendar_id,
+        "eventId": event_id,
+        "resource" :{
+          "end":{
+            "date": date
+          },
+          "start":{
+            "date": date
+          },
+          "summary": nom,
+          "description": desc,
+          "location": loc,
+        }
+      });
+      request_event_modif.execute(function() {
+        setTimeout(function(){location.reload();},100);
+      });
+    }
+
+    // EVENEMENTS ------------------
 
     // Evenement Formulaires ajout d'event --------------------
     $("#calendrier").on('click', "#ajouter_event", function(e){
@@ -231,6 +266,12 @@ function makeApiCall() {
           $('#infos_event').empty();
         });
         $("#fond_noir_popup").fadeOut("slow");
+      });
+
+      // Suppression de l'event si clic sur le bouton correspondent
+      $("#info_suppr_popup").on('click', function(e){
+        e.preventDefault();
+        supprime_event(calendrier_uandme_id, event_id)
       });
     })
 
