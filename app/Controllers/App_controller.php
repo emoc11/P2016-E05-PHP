@@ -21,6 +21,10 @@ class App_controller extends Controller{
     function infos($f3){
         $this->tpl=array('render'=>'infos.html');
     }
+    
+    function album($f3){
+        $this->tpl=array('render'=>'album.html');
+    }
 
     function image_punching($f3){
         if($_FILES['files']['error'] == 0) {
