@@ -812,6 +812,50 @@ select{
 
 #wishlist h1 {
 	width:100%;
-	display:inline-bloxk;
+	display:inline-block;
 }
+
+#wishlist a, #addList{
+display:block;
+text-decoration:none;
+color:#e74c3c;
+margin-top:20%;
+margin-bottom:20%;
+font-size:1.1em;
+max-width:80%;
+}
+
+#wishlist a {
+	margin-left:10%;
+	font-size:1.1em
+}
+
+#addList {
+	margin-top:30%;
+	margin-bottom:10%;
+	font-size:1.1em;
+}
+
+#addList a:hover {
+color:white;
+
+}
+
+#wishlist a:hover {
+text-decoration:none;
+color:white;
+
+}
+
+
+.columnAlbum1 {
+	margin-top:;
+	width:25%;
+	padding:2%;
+	display:inline-block;
+	min-height:20px;
+	background-color:rgba(22, 22, 22, 0.8);
+	float:left;
+}
+
 
