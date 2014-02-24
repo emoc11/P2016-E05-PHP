@@ -66,7 +66,22 @@
                 <input type="date" name="date_event" id='date_event' placeholder="<?php echo date("Y-d-m") ?>*" />
                 <input type="text" name="loc_event" id='loc_event' placeholder="Lieu" />
                 <textarea name='desc_event' id='desc_event' placeholder="Description"></textarea>
-                <input type="submit" id='envoi_ajout_event' name="submitPhoto" value="Ajouter" />
+                <input type="submit" id='envoi_ajout_event' name="submit_event" value="Ajouter" />
+            </form>
+        </div>
+
+        <div id='popup_modif_event'>
+            <div class='fermer_popup' id='modif_popup_close'><a href='#'>fermer</a></div>
+            <h1>Modification d'évènement</h1>
+            <p id='erreur_modif_event'></p>
+            <form method="post" action="calendrier/modif">
+                <input type="text" name="nom_event" id='nom_event_modif' placeholder='Titre*' />
+                <!-- PROBLEME modification de date acceptée une seule fois -> bloque toute modif après
+                <input type="date" name="date_event" id='date_event_modif' placeholder="<?php echo date("Y-d-m") ?>*" /> -->
+                <input type="date" name="date_event" id='date_event_modif' disabled="disabled" /> 
+                <input type="text" name="loc_event" id='loc_event_modif' placeholder="Lieu" />
+                <textarea name='desc_event' id='desc_event_modif' placeholder="Description"></textarea>
+                <input type="submit" id='envoi_modif_event' name="modif_event" value="Modifier" />
             </form>
         </div>
 

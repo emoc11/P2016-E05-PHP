@@ -465,7 +465,12 @@ footer p{
 	color: rgba(231,76,60,0.5);
 }
 
-#popup_ajout_event, #popup_info_event {
+#popup_modif_event input[disabled='disabled'] {
+	background: none;
+	color: white;
+}
+
+#popup_ajout_event, #popup_info_event, #popup_modif_event {
 	position: absolute;
 	top: 20%;
 	left: 30%;
@@ -476,16 +481,23 @@ footer p{
 	max-width: 40%;
 }
 
-#popup_ajout_event textarea {
+#popup_ajout_event textarea, #popup_modif_event textarea {
 	min-width: 100%;
+	display: block;
+	color: black;
+	width: 100%;
+	margin: 10px auto 0 auto;
+	padding: 3px;
+	outline: 0;
+	border: 0;
 }
 
-#popup_ajout_event h2 {
+#popup_ajout_event h2, #popup_modif_event h2 {
 	line-height: 30px;
 	margin-bottom: 30px;
 }
 
-#popup_ajout_event input {
+#popup_ajout_event input, #popup_modif_event input {
 	display: block;
 	color: black;
 	width: 100%;
@@ -495,17 +507,7 @@ footer p{
 	padding: 3px;
 }
 
-#popup_ajout_event textarea {
-	display: block;
-	color: black;
-	width: 100%;
-	margin: 10px auto 0 auto;
-	padding: 3px;
-	outline: 0;
-	border: 0;
-}
-
-#popup_ajout_event input[type='submit'], #popup_info_event #info_suppr_popup, #popup_info_event  #info_modif_popup{
+#popup_ajout_event input[type='submit'], #popup_info_event #info_suppr_popup, #popup_info_event  #info_modif_popup, #popup_modif_event input[type='submit']{
 	background: rgba(231, 76, 60, .5);
 	padding: 10px 30px;
 	border: none;
@@ -520,7 +522,7 @@ footer p{
 	float:left;
 }
 
-#popup_ajout_event input[type='submit']:hover, #popup_info_event #info_suppr_popup:hover, #popup_info_event  #info_modif_popup:hover{
+#popup_ajout_event input[type='submit']:hover, #popup_info_event #info_suppr_popup:hover, #popup_info_event  #info_modif_popup:hover, #popup_modif_event input[type='submit']:hover{
 	background: rgba(231, 76, 60, .7);
 }
 

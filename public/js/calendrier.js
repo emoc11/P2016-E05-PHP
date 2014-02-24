@@ -155,7 +155,6 @@ function makeApiCall() {
         "eventId": event_id
       });
       request_event_infos.execute(function(resp) {
-        console.log(resp);
         // Affichage correct de la date JJ/MM/AAAA
         if(resp.start.dateTime != undefined) var date_event = resp.start.dateTime;
         else var date_event = resp.start.date;
@@ -191,6 +190,27 @@ function makeApiCall() {
       });
     }
 
+    function affiche_modif_event(calendrier_uandme_id, event_id, titre, date, lieu, desc){
+      var date_tab = date.split(" / ");
+      date = date_tab[2]+"-"+date_tab[1]+"-"+date_tab[0];
+      if(lieu != undefined && lieu != "") {
+        var lieu_tab = lieu.split(">");
+        lieu = lieu_tab[1];
+      }
+      if(desc != undefined && desc != "") {
+        var desc_tab = desc.split(">");
+        desc = desc_tab[1];
+      }
+      $("#nom_event_modif").val(titre);
+      $("#date_event_modif").val(date);
+      $("#loc_event_modif").val(lieu);
+      $("#desc_event_modif").val(desc);
+      $("#popup_info_event").fadeOut("slow", function() {
+        $('#popup_modif_event').fadeIn("slow");
+        $("#popup_modif_event #envoi_modif_event").attr("data-id", event_id);
+      });
+    }
+
     function modifier_event(calendar_id, event_id, date, nom, desc, loc){
       var request_event_modif = gapi.client.calendar.events.update({
         "calendarId": calendar_id,
@@ -207,7 +227,8 @@ function makeApiCall() {
           "location": loc,
         }
       });
-      request_event_modif.execute(function() {
+      request_event_modif.execute(function(resp) {
+        console.log(resp);
         setTimeout(function(){location.reload();},100);
       });
     }
@@ -247,31 +268,67 @@ function makeApiCall() {
       // Fermeture de la popup au clic sur "fermer"
       $("#info_popup_close").on('click', function(e){
         e.preventDefault();
-        $("#popup_info_event").fadeOut("slow", function() {
-          $('#infos_event').empty();
-          $('#infos_event').empty();
-          $('#infos_event').empty();
-          $('#infos_event').empty();
-        });
+        $("#popup_info_event").fadeOut("slow", function() { $('#infos_event').empty(); });
         $("#fond_noir_popup").fadeOut("slow");
       });
 
       // Fermeture de la popup si clic sur fond noir
       $("#fond_noir_popup").on('click', function(e){
         e.preventDefault();
-        $("#popup_info_event").fadeOut("slow", function() {
-          $('#infos_event').empty();
-          $('#infos_event').empty();
-          $('#infos_event').empty();
-          $('#infos_event').empty();
-        });
+        $("#popup_info_event").fadeOut("slow", function() { $('#infos_event').empty(); });
         $("#fond_noir_popup").fadeOut("slow");
       });
 
-      // Suppression de l'event si clic sur le bouton correspondent
+      // Modification de l'event si clic sur le bouton modif
+      $("#info_modif_popup").on('click', function(e){
+        e.preventDefault();
+        var titre = $("#infos_event h1").html();
+        var date = $("#infos_event #info_date_event").html();
+        var lieu = $("#infos_event #info_lieu_event").html();
+        var desc = $("#infos_event #info_desc_event").html();
+        var event_id = $("#popup_info_event #info_modif_popup").data("id");
+        affiche_modif_event(calendrier_uandme_id, event_id, titre, date, lieu, desc);
+
+        // Fermeture de la popup si clic sur fond noir
+        $("#fond_noir_popup").on('click', function(e){
+          e.preventDefault();
+          $("#popup_modif_event").fadeOut("slow");
+          $("#fond_noir_popup").fadeOut("slow");
+          $('#infos_event').empty();
+        });
+
+        // Fermeture de la popup au clic sur "fermer"
+        $("#modif_popup_close").on('click', function(e){
+          e.preventDefault();
+          $("#popup_modif_event").fadeOut("slow");
+          $("#fond_noir_popup").fadeOut("slow");
+          $('#infos_event').empty();
+        });
+
+        $("#envoi_modif_event").on("click", function(e){
+          e.preventDefault();
+          titre = $("#nom_event_modif").val();
+          date = $("#date_event_modif").val();
+          lieu = $("#loc_event_modif").val();
+          desc = $("#desc_event_modif").val();
+          var date_verif = ValidDate(date);
+          var erreur_ajout_event = "";
+          if(titre != "" && date != "" && date_verif){
+            $("#erreur_modif_event").html("Évènement ajouté. Actualisation...");
+            modifier_event(calendrier_uandme_id, event_id, date, titre, desc, lieu)
+          }
+          else {
+            if(titre == "") erreur_ajout_event += "Erreur: veuillez préciser un nom.<br/>";
+            if(date == "" || !date_verif) erreur_ajout_event += "Erreur: veuillez indiquer une date au format AAAA-MM-JJ.<br/>";
+          }
+          $("#erreur_ajout_event").html(erreur_ajout_event);
+        })
+      });
+
+      // Suppression de l'event si clic sur le bouton suppr
       $("#info_suppr_popup").on('click', function(e){
         e.preventDefault();
-        supprime_event(calendrier_uandme_id, event_id)
+        supprime_event(calendrier_uandme_id, event_id);
       });
     })
 
