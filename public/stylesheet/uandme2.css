@@ -264,18 +264,8 @@ nav li a{
 	min-height: 75%;
 	padding: 1% 2%;
 	margin-left: 13%;
-<<<<<<< HEAD
-<<<<<<< HEAD
-	z-index:10;	
-	
-	
-	
-=======
+	z-index:10;
 	margin-bottom: 10%;
->>>>>>> d02f57a93c9454498aed3810ace605ce0a9f9db1
-=======
-	margin-bottom: 10%;
->>>>>>> f67c039f387021ae3ba0aaa7d64b5d335a4eddf2
 /* 	border: 1px solid green; */
 }
 
@@ -462,7 +452,6 @@ footer p{
 
 #info_suppr_popup {
 	color: rgba(231,76,60,0.5);
-<<<<<<< HEAD
 }
 
 #popup_info_event h1 {
@@ -480,25 +469,6 @@ footer p{
 	color: rgba(231,76,60,0.5);
 }
 
-=======
-}
-
-#popup_info_event h1 {
-	text-align: center;
-	color: rgba(255,128,49,0.5);
-	margin-top: 0;
-	line-height: 0;
-}
-
-#popup_info_event #info_date_event {
-	text-align: center;
-}
-
-#popup_info_event #info_lieu_event:first-line, #popup_info_event #info_desc_event:first-line{
-	color: rgba(231,76,60,0.5);
-}
-
->>>>>>> f67c039f387021ae3ba0aaa7d64b5d335a4eddf2
 #popup_modif_event input[disabled='disabled'] {
 	background: none;
 	color: white;
@@ -539,7 +509,6 @@ footer p{
 	outline: 0;
 	border: 0;
 	padding: 3px;
-<<<<<<< HEAD
 }
 
 #popup_ajout_event input[type='submit'], #popup_info_event #info_suppr_popup, #popup_info_event  #info_modif_popup, #popup_modif_event input[type='submit']{
@@ -561,29 +530,6 @@ footer p{
 	background: rgba(231, 76, 60, .7);
 }
 
-=======
-}
-
-#popup_ajout_event input[type='submit'], #popup_info_event #info_suppr_popup, #popup_info_event  #info_modif_popup, #popup_modif_event input[type='submit']{
-	background: rgba(231, 76, 60, .5);
-	padding: 10px 30px;
-	border: none;
-	transition: background .3s ease-in;
-	color: white;
-	width: auto;
-	float:right;
-	margin-left: 10px;
-}
-
-#popup_info_event  #info_modif_popup {
-	float:left;
-}
-
-#popup_ajout_event input[type='submit']:hover, #popup_info_event #info_suppr_popup:hover, #popup_info_event  #info_modif_popup:hover, #popup_modif_event input[type='submit']:hover{
-	background: rgba(231, 76, 60, .7);
-}
-
->>>>>>> f67c039f387021ae3ba0aaa7d64b5d335a4eddf2
 .fermer_popup {
 	position: absolute;
 	top: 10px;
@@ -793,11 +739,7 @@ select{
   transform: scale(1); /* mise à l'échelle 1:1 */  
 }
 
-<<<<<<< HEAD
-
-=======
 /* Page album */
->>>>>>> f67c039f387021ae3ba0aaa7d64b5d335a4eddf2
 
 .columnAlbum {
 	margin-top:;
@@ -806,11 +748,7 @@ select{
 	display:inline-block;
 	min-height:20px;
 	background-color:rgba(22, 22, 22, 0.8);
-<<<<<<< HEAD
-	float:left;
-=======
-	float:left; /* important pour aligner toutes les colonnes */ 
->>>>>>> f67c039f387021ae3ba0aaa7d64b5d335a4eddf2
+	float:left; /* important pour aligner toutes les colonnes */
 }
 
 
@@ -865,16 +803,11 @@ select{
 .searching input {
     color:#a39594;
     text-align:center;
-
-<<<<<<< HEAD
-=======
 }
 
 .searching input:hover {
     text-decoration:none;
      outline: none;
-    
->>>>>>> f67c039f387021ae3ba0aaa7d64b5d335a4eddf2
 }
 
 .searching input:hover {
@@ -889,11 +822,8 @@ select{
 	width:68%;
 }
 
-<<<<<<< HEAD
-=======
-/* Page wishlist */ 
+/* Page wishlist */
 
->>>>>>> f67c039f387021ae3ba0aaa7d64b5d335a4eddf2
 #wishlist h1 {
 	width:100%;
 	display:inline-block;
@@ -913,51 +843,27 @@ max-width:80%;
 	margin-left:10%;
 	font-size:1.1em
 }
-<<<<<<< HEAD
-
-#addList {
-=======
  
-#addList { /* premier cadre à droite qui répertorie les listes et permet d'en créer de nouvelles */ 
->>>>>>> f67c039f387021ae3ba0aaa7d64b5d335a4eddf2
+#addList { /* premier cadre à droite qui répertorie les listes et permet d'en créer de nouvelles */
 	margin-top:30%;
 	margin-bottom:10%;
 	font-size:1.1em;
 }
 
-#addList a:hover {
-color:white;
-<<<<<<< HEAD
-
-=======
->>>>>>> f67c039f387021ae3ba0aaa7d64b5d335a4eddf2
-}
-
 #wishlist a:hover {
-text-decoration:none;
-color:white;
-<<<<<<< HEAD
-
-=======
->>>>>>> f67c039f387021ae3ba0aaa7d64b5d335a4eddf2
+	text-decoration:none;
+	color:white;
 }
 
 
 .columnAlbum1 {
-<<<<<<< HEAD
-	margin-top:;
-	width:25%;
-=======
 	margin:1%;
 	width:22%;
->>>>>>> f67c039f387021ae3ba0aaa7d64b5d335a4eddf2
 	padding:2%;
 	display:inline-block;
 	min-height:20px;
 	background-color:rgba(22, 22, 22, 0.8);
 	float:left;
-<<<<<<< HEAD
-=======
 } /* création d'un 1 pour ne pas perturber la page albums et ses colonnes */
 
 
@@ -1021,7 +927,6 @@ padding-bottom:30%;
 
 #addIdea a:hover {
 	color:white;
->>>>>>> f67c039f387021ae3ba0aaa7d64b5d335a4eddf2
 }
 
 
