@@ -26,6 +26,10 @@ class App_controller extends Controller{
         $this->tpl=array('render'=>'infos.html');
     }
     
+    function wishlist($f3){
+        $this->tpl=array('render'=>'wishlist.html');
+    }
+    
     function album($f3){
         $this->tpl=array('render'=>'album.html');
     }
