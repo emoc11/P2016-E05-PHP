@@ -165,7 +165,7 @@ button, input { line-height: normal; *overflow: visible; }
  * 2. Allow styling of clickable form elements in iOS
  */
 
-button, input[type="button"], input[type="reset"], input[type="submit"] { cursor: pointer; -webkit-appearance: button; }
+button, input[type="button"], input[type="reset"], input[type="submit"] { cursor: pointer; -webkit-appearance: none; }
 
 /*
  * Consistent box sizing and appearance

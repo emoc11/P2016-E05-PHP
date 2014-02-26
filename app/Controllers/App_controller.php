@@ -5,6 +5,10 @@ class App_controller extends Controller{
     function __construct(){
 
     }
+    
+    function home($f3){
+        $this->tpl=array('render'=>'template.html');
+    }
 
     function punching($f3){
         $params['users_id'] = 1;
@@ -20,6 +24,10 @@ class App_controller extends Controller{
     
     function infos($f3){
         $this->tpl=array('render'=>'infos.html');
+    }
+    
+    function album($f3){
+        $this->tpl=array('render'=>'album.html');
     }
 
     function image_punching($f3){

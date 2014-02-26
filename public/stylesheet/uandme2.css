@@ -7,6 +7,8 @@ body{
 	overflow:none;
 	background-image: url(img/bg.jpg);
 	background-size: cover;
+	z-index: 1;
+	overflow-x: hidden;
 }
 
 #ajouter_event p {
@@ -261,10 +263,15 @@ nav li a{
 	width: 65%;
 	min-height: 75%;
 	padding: 1% 2%;
-	margin-left: 13%;	
+	margin-left: 13%;
+<<<<<<< HEAD
+	z-index:10;	
 	
 	
 	
+=======
+	margin-bottom: 10%;
+>>>>>>> d02f57a93c9454498aed3810ace605ce0a9f9db1
 /* 	border: 1px solid green; */
 }
 
@@ -277,8 +284,11 @@ nav li a{
 }
 
 #buttons{
+	background: transparent;
 	float: left;
 	padding: 10% 9% 0 9%;
+	-moz-appearance: none;
+	-webkit-appearance: none;
 }
 
 #buttons button{
@@ -351,7 +361,7 @@ button[disabled=disabled]{
 }
 
 #pop_send{
-	z-index: 10;
+	z-index: 20;
 	background: rgba(0,0,0,0.6);
 	width: 40%;
 	height: 40%;
@@ -395,41 +405,138 @@ footer p{
 
 /* Page Calendrier */
 
+#calendrier {
+	position: relative;
+}
+
 .jour_calendar {
-	padding: 5px 10px 0 10px;
+	padding: 5px 10px;
 	display: inline-block;
-	background: rgba(255,255,255,.1);
+	background: rgba(0,0,0,.5);
 	text-align: center;
 	vertical-align: top;
-	border-radius: 3px;
+	margin-bottom: 10px;
+	margin-right: 10px;
 }
 
-.jour_calendar + .jour_calendar {
-	margin-left: 10px;
+
+.jour_calendar li{
+	list-style-type: disc;
+	list-style-position: inside;
+	text-align: left;
+	color: rgba(231,76,60,0.5);
 }
 
-#popup_ajout_event {
+.jour_calendar li:first-line{
+	color:white;
+}
+
+.jour_calendar p {
+	margin: 0;
+	padding: 0;
+	color: rgba(255,128,49,0.5);
+}
+
+#info_suppr_popup {
+	color: rgba(231,76,60,0.5);
+}
+
+#ajouter_event {
 	position: absolute;
-	top: 35%;
-	left: 35%;
-	padding: 20px;
-	background: rgba(255,255,255,.2);
-	display:none;
+	top: 10px;
+	right: 10px;
+	background:none;
+	font-size: 70px;
+	color: white;
+	line-height: 40px;
+	transition: color .3s ease-in;
 }
 
-#popup_ajout_event h2 {
+#ajouter_event:hover {
+	color: rgba(255,128,49,0.5);
+}
+
+#info_suppr_popup {
+	color: rgba(231,76,60,0.5);
+}
+
+#popup_info_event h1 {
+	text-align: center;
+	color: rgba(255,128,49,0.5);
+	margin-top: 0;
+	line-height: 0;
+}
+
+#popup_info_event #info_date_event {
+	text-align: center;
+}
+
+#popup_info_event #info_lieu_event:first-line, #popup_info_event #info_desc_event:first-line{
+	color: rgba(231,76,60,0.5);
+}
+
+#popup_modif_event input[disabled='disabled'] {
+	background: none;
+	color: white;
+}
+
+#popup_ajout_event, #popup_info_event, #popup_modif_event {
+	position: absolute;
+	top: 20%;
+	left: 30%;
+	padding: 20px;
+	background: rgba(0,0,0,.7);
+	display:none;
+	min-width: 40%;
+	max-width: 40%;
+}
+
+#popup_ajout_event textarea, #popup_modif_event textarea {
+	min-width: 100%;
+	display: block;
+	color: black;
+	width: 100%;
+	margin: 10px auto 0 auto;
+	padding: 3px;
+	outline: 0;
+	border: 0;
+}
+
+#popup_ajout_event h2, #popup_modif_event h2 {
 	line-height: 30px;
 	margin-bottom: 30px;
 }
 
-#popup_ajout_event input {
+#popup_ajout_event input, #popup_modif_event input {
 	display: block;
 	color: black;
-	width: 95%;
+	width: 100%;
 	margin: 10px auto 0 auto;
+	outline: 0;
+	border: 0;
+	padding: 3px;
 }
 
-#fermer_popup {
+#popup_ajout_event input[type='submit'], #popup_info_event #info_suppr_popup, #popup_info_event  #info_modif_popup, #popup_modif_event input[type='submit']{
+	background: rgba(231, 76, 60, .5);
+	padding: 10px 30px;
+	border: none;
+	transition: background .3s ease-in;
+	color: white;
+	width: auto;
+	float:right;
+	margin-left: 10px;
+}
+
+#popup_info_event  #info_modif_popup {
+	float:left;
+}
+
+#popup_ajout_event input[type='submit']:hover, #popup_info_event #info_suppr_popup:hover, #popup_info_event  #info_modif_popup:hover, #popup_modif_event input[type='submit']:hover{
+	background: rgba(231, 76, 60, .7);
+}
+
+.fermer_popup {
 	position: absolute;
 	top: 10px;
 	right: 10px;
@@ -437,7 +544,7 @@ footer p{
 	color:rgba(231,76,60,0.5);
 }
 
-#fermer_popup a {
+.fermer_popup a {
 	color:rgba(231,76,60,0.5);
 }
 
@@ -445,11 +552,11 @@ footer p{
 	display:none;
 	width: 100%;
 	height: 100%;
-	background: rgba(0,0,0,.5);
+	background: rgba(0,0,0,.8);
 	position: absolute;
-	z-index:;
 	top:0;
 	left:0;
+	cursor: pointer;
 }
 
 /* Page infos personelles*/
@@ -458,7 +565,7 @@ footer p{
 	position: absolute;
 	top:12%;
 	left: 28%;
-	z-index:1;	
+	z-index:15;	
 }
 
 #infosPersos{
@@ -467,19 +574,15 @@ footer p{
 	font-family: Bellerose;
 	margin:auto;
 	margin-top: 20px;
-	z-index: 30;	
 }
 
 #infosPersos h1{
+z-index: 20;
 }
 
 #infosPersos input{
 	border: none;
 	background: rgba(0,0,0,0.6);
-}
-
-#infosPersos{
-	font-family: 20px;
 }
 
 #nom{
@@ -531,7 +634,7 @@ label[for=birthDay],label[for=meetDay]{
 }
 
 #dates{
-	width: 80%;
+	width: 90%;
 	float: left;
 	margin-top: 20px;
 	margin-bottom: 30px;
@@ -539,9 +642,15 @@ label[for=birthDay],label[for=meetDay]{
 
 #dates select{
 	padding: 2px;
-	width: 80px;
+	width: 105px;
 	margin: 5px;
 	font-size: 15px;
+	background-image: url(img/selector.png);
+	background-repeat: no-repeat;
+	background-position-x: 82px;
+	background-position-y: 3px;
+	background-size: 20px 18px;
+	padding-left: 5px;
 }
 
 select{
@@ -636,18 +745,16 @@ select{
   transform: scale(1); /* mise à l'échelle 1:1 */  
 }
 
-/*.albumGeneral
-{ 
-clear:both;
-}*/
+
 
 .columnAlbum {
 	margin-top:;
-	width:23%;
-	margin:2%;
+	width:25%;
+	padding:2%;
 	display:inline-block;
 	min-height:20px;
 	background-color:rgba(22, 22, 22, 0.8);
+	float:left;
 }
 
 
@@ -685,6 +792,7 @@ clear:both;
 	background-color:black;
 	border-radius:5px;
 	border:none;
+	font-style:italic;
 }
 
 .searching input::-webkit-input-placeholder {
@@ -700,13 +808,67 @@ clear:both;
 .searching input {
     color:#a39594;
     text-align:center;
+
 }
 
+.searching input:hover {
+    text-decoration:none;
+     outline: none;
+    
+}
 
 #album h1
 { 
 	display:inline-block;
 	width:68%;
+}
+
+#wishlist h1 {
+	width:100%;
+	display:inline-block;
+}
+
+#wishlist a, #addList{
+display:block;
+text-decoration:none;
+color:#e74c3c;
+margin-top:20%;
+margin-bottom:20%;
+font-size:1.1em;
+max-width:80%;
+}
+
+#wishlist a {
+	margin-left:10%;
+	font-size:1.1em
+}
+
+#addList {
+	margin-top:30%;
+	margin-bottom:10%;
+	font-size:1.1em;
+}
+
+#addList a:hover {
+color:white;
+
+}
+
+#wishlist a:hover {
+text-decoration:none;
+color:white;
+
+}
+
+
+.columnAlbum1 {
+	margin-top:;
+	width:25%;
+	padding:2%;
+	display:inline-block;
+	min-height:20px;
+	background-color:rgba(22, 22, 22, 0.8);
+	float:left;
 }
 
 

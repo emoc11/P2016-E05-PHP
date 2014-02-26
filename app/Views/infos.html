@@ -19,12 +19,12 @@
 <body class="clearfix">
 
   <header>
-  	<p>
-	  <img src="" id="logo" alt="U&ME"/>
-	  <a id="logout">Déconnexion</a>
-	  <img src="<?php echo $IMG; ?>settings.png" id="settings" alt="settings"/>
-	  <img src="" id="notifications" alt="notif"/>
-  	</p>
+    <p>
+      <a href=""><img src="" id="logo" alt="U&ME"/></a>
+      <a href='user/deco' id="logout">Déconnexion</a>
+      <a href='infos'><img src="<?php echo $IMG; ?>settings.png" id="settings" alt="settings"/></a>
+      <img src="" id="notifications" alt="notif"/>
+    </p>
   </header>
 
 <!--
@@ -54,8 +54,8 @@
 -->
 
   <section class="main orgBorder" id="infosPersos">
-  	<h1 class="mainTitle">Infos personelles</h1>  	<div class="round red" id="lettrine"></div>
-
+  	<div class="round red" id="lettrine"></div>
+  	<h1 class="mainTitle">Infos personnelles</h1>
 	  <form>
 	  	<fieldset id="infos">
 		  <input type="text" id="nom" placeholder="Nom, prénom ou pseudo *"/><br/>
@@ -63,7 +63,7 @@
 		  <input type="radio" id="sexeH" 
 		  name="sexec"/><label for="sexeH">Homme</label>
 		  <div id="profilePic">
-		  	<img src="<?php echo $IMG;?>plus.png"/>	  	
+		  	<a href=""><img src="<?php echo $IMG;?>plus.png"/></a>	  	
 		  	<p>Ajouter une photo de profil</p>
 		  </div>
 		</fieldset>
@@ -71,35 +71,173 @@
 		<fieldset id="dates">
 		  <label for="birthDay">Date de naissance</label>
 		  <select id="birthDay">
-		  	<option>Jour</option> 
+		  	<option disabled="true" selected="true">Jour</option>
+		  	<option>1</option>
+		  	<option>2</option> 
+		  	<option>3</option> 
+		  	<option>4</option> 
+		  	<option>5</option> 
+		  	<option>6</option>
+		  	<option>7</option> 
+		  	<option>8</option> 
+		  	<option>9</option> 
+		  	<option>10</option>
+		  	<option>11</option>
+		  	<option>12</option> 
+		  	<option>13</option> 
+		  	<option>14</option> 
+		  	<option>15</option>
+		  	<option>16</option>
+		  	<option>17</option> 
+		  	<option>18</option> 
+		  	<option>19</option> 
+		  	<option>20</option>
+		  	<option>21</option>
+		  	<option>22</option> 
+		  	<option>23</option> 
+		  	<option>24</option> 
+		  	<option>25</option>
+		  	<option>26</option>
+		  	<option>27</option> 
+		  	<option>28</option> 
+		  	<option>29</option> 
+		  	<option>30</option>
+		  	<option>31</option> 
 		  </select>
 		  <select id="birthMonth">
-		  	<option>Mois</option> 
+		  	<option disabled="true" selected="true">Mois</option> 
+		  	<option>Janvier</option>
+		  	<option>Février</option>
+		  	<option>Mars</option>
+		  	<option>Avril</option>
+		  	<option>Mai</option>
+		  	<option>Juin</option>
+		  	<option>Juillet</option>
+		  	<option>Août</option>
+		  	<option>Septembre</option>
+		  	<option>Octobre</option>
+		  	<option>Novembre</option>
+		  	<option>Décembre</option>
 		  </select> 
 		  <select id="birthYear">
-		  	<option>Année</option> 
+		  	<option disabled="true" selected="true">Année</option>
+		  	<option>2001</option>
+		  	<option>2000</option>
+		  	<option>1999</option>
+		  	<option>1998</option>
+		  	<option>1997</option>
+		  	<option>1996</option>
+		  	<option>1995</option>
+		  	<option>1994</option>
+		  	<option>1993</option>
+		  	<option>1992</option>
+		  	<option>1991</option>
+		  	<option>1990</option>
+		  	<option>1989</option>
+		  	<option>1988</option>
+		  	<option>1987</option>
+		  	<option>1986</option>
+		  	<option>1985</option>
+		  	<option>1984</option>
+		  	<option>1983</option>
+		  	<option>1982</option>
+		  	<option>1981</option>
+		  	<option>1980</option>
+		  	<option>1979</option>
+		  	<option>1978</option>
+		  	<option>1977</option>
+		  	<option>1976</option>
+		  	<option>1975</option>
+		  	<option>1974</option>
+		  	<option>1973</option>
+		  	<option>1972</option>
+		  	<option>1971</option>
+		  	<option>1970</option>
+		  	<option>1969</option>
+		  	<option>1968</option>
+		  	<option>1967</option>
 		  </select>
 		  <br />
 		  <label for="meetDay">Date de rencontre</label>
 		  <select id="meetDay">
-		  	<option>Jour</option> 
+		  	<option selected="true" disabled="true">Jour</option>
+		  	<option>1</option>
+		  	<option>2</option> 
+		  	<option>3</option> 
+		  	<option>4</option> 
+		  	<option>5</option> 
+		  	<option>6</option>
+		  	<option>7</option> 
+		  	<option>8</option> 
+		  	<option>9</option> 
+		  	<option>10</option>
+		  	<option>11</option>
+		  	<option>12</option> 
+		  	<option>13</option> 
+		  	<option>14</option> 
+		  	<option>15</option>
+		  	<option>16</option>
+		  	<option>17</option> 
+		  	<option>18</option> 
+		  	<option>19</option> 
+		  	<option>20</option>
+		  	<option>21</option>
+		  	<option>22</option> 
+		  	<option>23</option> 
+		  	<option>24</option> 
+		  	<option>25</option>
+		  	<option>26</option>
+		  	<option>27</option> 
+		  	<option>28</option> 
+		  	<option>29</option> 
+		  	<option>30</option>
+		  	<option>31</option> 
 		  </select>
 		  <select id="meetMonth">
-		  	<option>Mois</option> 
+		  	<option disabled="true" selected="true">Mois</option> 
+		  	<option>Janvier</option>
+		  	<option>Février</option>
+		  	<option>Mars</option>
+		  	<option>Avril</option>
+		  	<option>Mai</option>
+		  	<option>Juin</option>
+		  	<option>Juillet</option>
+		  	<option>Août</option>
+		  	<option>Septembre</option>
+		  	<option>Octobre</option>
+		  	<option>Novembre</option>
+		  	<option>Décembre</option> 
 		  </select>
 		  <select id="meetYear">
-		  	<option>Année</option> 
+		  	<option selected="true" disabled="true">Année</option>
+		  	<option>2014</option>
+		  	<option>2013</option>
+		  	<option>2012</option>
+		  	<option>2011</option>
+		  	<option>2010</option>
+		  	<option>2009</option>
+		  	<option>2008</option>
+		  	<option>2007</option>
+		  	<option>2006</option>
+		  	<option>2005</option>
+		  	<option>2004</option>
+		  	<option>2003</option>
+		  	<option>2002</option>
+		  	<option>2001</option>
+		  	<option>2000</option>
+		  	<option>1999</option>
+		  	<option>1998</option> 
 		  </select>
 		</fieldset>
 		
 		<fieldset id="bgPic">
 		  <div id="chooseBgPic">
-		  	<img src="<?php echo $IMG;?>plus.png"/>	  	
+		  	<a href=""><img src="<?php echo $IMG;?>plus.png"/></a>	  	
 		  	<p>Ajouter une photo de fond</p>
 		  </div>
 		  <p id="validBgPic">Votre partenaire devra valider la photo choisie.</p>
 		</fieldset>
-		  <button class="OrgBorder" id="validInfos">Valider</button>
+		  <button class="OrgBorder" id="validInfos" >Valider</button>
   </section>
 
 

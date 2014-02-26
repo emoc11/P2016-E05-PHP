@@ -21,15 +21,15 @@
   <header>
     <p>
       <img src="" id="logo" alt="U&ME"/>
-      <a id="logout">Déconnexion</a>
-      <img src="<?php echo $IMG; ?>settings.png" id="settings" alt="settings"/>
+      <a href='user/deco' id="logout">Déconnexion</a>
+      <a href='infos'><img src="<?php echo $IMG; ?>settings.png" id="settings" alt="settings"/></a>
       <img src="" id="notifications" alt="notif"/>
     </p>
   </header>
 
   <nav>
     <ul>
-    <li class="itemMenu" id="nous"><a href="infos"></a></li>
+    <li class="itemMenu" id="nous"><a href="nous"></a></li>
     <li class="itemMenu" id="chat"><a href="chat"></a></li>
     <li class="itemMenu active" id="tabou"><a href="tabou"></a></li>
     <li class="itemMenu" id="coquin"><a href="coquin"></a></li>
@@ -50,18 +50,46 @@
   </section>
 
   <section class="main" id='calendrier'>
+        <a class='jour_calendar' id='ajouter_event' href='#'>+</a>
+
+        <div id='fond_noir_popup'></div>
+
         <h2>Calendrier</h2>
         <ul id='events'>Chargement...</ul>
 
-        <div id='fond_noir_popup'></div>
         <div id='popup_ajout_event'>
-            <div id='fermer_popup'><a href='#'>fermer</a></div>
-            <h2>Ajout d'évènement</h2>
+            <div class='fermer_popup' id='ajout_popup_close'><a href='#'>fermer</a></div>
+            <h1>Ajout d'évènement</h1>
+            <p id='erreur_ajout_event'></p>
             <form method="post" action="calendrier/ajout">
-                <input type="text" name="nom_event" id='nom_event' placeholder='Titre' />
-                <input type="date" name="date_event" id='date_event' placeholder="<?php echo date("y-d-m") ?>" />
-                <input type="submit" id='envoi_ajout_event' name="submitPhoto" value="Ajouter" />
+                <input type="text" name="nom_event" id='nom_event' placeholder='Titre*' />
+                <input type="date" name="date_event" id='date_event' placeholder="<?php echo date("Y-d-m") ?>*" />
+                <input type="text" name="loc_event" id='loc_event' placeholder="Lieu" />
+                <textarea name='desc_event' id='desc_event' placeholder="Description"></textarea>
+                <input type="submit" id='envoi_ajout_event' name="submit_event" value="Ajouter" />
             </form>
+        </div>
+
+        <div id='popup_modif_event'>
+            <div class='fermer_popup' id='modif_popup_close'><a href='#'>fermer</a></div>
+            <h1>Modification d'évènement</h1>
+            <p id='erreur_modif_event'></p>
+            <form method="post" action="calendrier/modif">
+                <input type="text" name="nom_event" id='nom_event_modif' placeholder='Titre*' />
+                <!-- PROBLEME modification de date acceptée une seule fois -> bloque toute modif après
+                <input type="date" name="date_event" id='date_event_modif' placeholder="<?php echo date("Y-d-m") ?>*" /> -->
+                <input type="date" name="date_event" id='date_event_modif' disabled="disabled" /> 
+                <input type="text" name="loc_event" id='loc_event_modif' placeholder="Lieu" />
+                <textarea name='desc_event' id='desc_event_modif' placeholder="Description"></textarea>
+                <input type="submit" id='envoi_modif_event' name="modif_event" value="Modifier" />
+            </form>
+        </div>
+
+        <div id='popup_info_event'>
+            <div class='fermer_popup' id='info_popup_close'><a href='#'>fermer</a></div>
+            <div id='infos_event'></div>
+            <a href='#' id='info_modif_popup'>Modifier</a>
+            <a href='#' id='info_suppr_popup'>Supprimer</a>
         </div>
   </section>
 
