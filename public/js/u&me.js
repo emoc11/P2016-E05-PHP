@@ -202,6 +202,23 @@ $(document).ready(function(){
 		}
 		
 	});
-
-
+	
+	/*PAGE LE CHAT*/{
+		
+		document.onkeydown = function(evt) {
+                evt = evt || window.event;
+                switch (evt.keyCode) {
+                        case 13:
+                            $("#dialog").append("<p class=\"meMessages\">"+$("#nextMsg").val()+"</p>");
+                            $("#nextMsg").val('')
+                       
+                    }
+                };
+                
+		$("#sendMsg").click(function(){
+			$("#dialog").append("<p class=\"meMessages\">"+$("#nextMsg").val()+"</p>");
+			$("#nextMsg").val('')
+		
+		});
+	}
 });

@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+     <base href="<?php echo $BASE; ?>/" />
+
+    <title>U &amp; ME</title>
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <link href="public/stylesheet/foundation.css" rel="stylesheet" type="text/css" />
+    <link href="public/stylesheet/normalize.css" rel="stylesheet" type="text/css" />
+    <link href="public/stylesheet/style.css" rel="stylesheet" type="text/css" />
+    <link href="public/stylesheet/uandme.css" rel="stylesheet" type="text/css" />
+  
+</head>
+<body class="clearfix">
+
+  <header>
+    <p>
+      <a href=""><img src="" id="logo" alt="U&ME"/></a>
+      <a href='user/deco' id="logout">Déconnexion</a>
+      <a href='infos'><img src="<?php echo $IMG; ?>settings.png" id="settings" alt="settings"/></a>
+      <img src="<?php echo $IMG; ?>notif.png" id="notifications" alt="notif"/>
+    </p>
+  </header>
+
+  <nav>
+    <ul>
+    <li class="itemMenu" id="menu_nous"><a href="nous"></a></li>
+    <li class="itemMenu active" id="menu_chat"><a href="chat"></a></li>
+    <li class="itemMenu" id="menu_tabou"><a href="tabou"></a></li>
+    <li class="itemMenu" id="menu_coquin"><a href="coquin"></a></li>
+    </ul>
+  </nav>
+
+  <section id="stats">
+        <ul class="stats_one">
+            <li><p id="us">MOI</p></li>
+            <li class="mood round red"></li>
+            <li class="menuPts round"><p>1200</p></li>
+        </ul>
+        <ul class="stats_one">
+            <li><p id="us">TOI</p></li>
+            <li class="mood round orange"></li>
+            <li class="menuPts round"><p>1280</p></li>
+        </ul>
+  </section>
+
+  <section class="main" id="le_chat">
+	  <h1 class="mainTitle">Notre chat</h1>
+	  <div id="dialog">
+	  	<h3 class="dateChat">Conversation du <span class="dateMsg">2 janvier 2014</span></h3>
+	  	<h4 class="mPseudo">Moi</h4>
+	  	<p class="myMessages">Curabitur molestie purus molestie turpis rhoncus, eget luctus ante aliquet.</p>
+	  	<h4 class="uPseudo">Toi</h4>
+	  	<p class="urMessages">Phasellus pellentesque cursus augue at gravida. Aliquam hendrerit erat ut massa rutrum, ut adipiscing odio convallis. Donec auctor facilisis ante eu laoreet. Fusce congue facilisis turpis ac fringilla.</p>
+	  	<p class="urMessages">Sed placerat sit amet justo sit amet ultricies. Phasellus eu dignissim augue, ut tristique magna. Aenean et diam odio. Morbi dapibus facilisis nibh non sagittis.</p>
+	  	<h4 class="mPseudo">Moi</h4>
+	  	<p class="myMessages">Ok.</p>
+	  	<p class="myMessages">Nam nisi nisl, sollicitudin luctus ipsum id, dignissim cursus elit.</p>
+	  	<h3 class="dateChat">Conversation du <span class="dateMsg">22 février 2014</span></h3>
+	  	<h4 class="uPseudo">Toi</h4>
+	  	<p class="urMessages">Phasellus eleifend convallis leo non accumsan. Phasellus pulvinar auctor felis in adipiscing.</p>
+	  	<p class="urMessages">Curabitur molestie purus molestie turpis rhoncus, eget luctus ante aliquet.</p>
+	  	<h4 class="mPseudo">Moi</h4>
+	  	<p class="myMessages">Phasellus pellentesque cursus augue at gravida. Aliquam hendrerit erat ut massa rutrum, ut adipiscing odio convallis. Donec auctor facilisis ante eu laoreet. Fusce congue facilisis turpis ac fringilla.</p>
+	  	<p class="myMessages">Sed placerat sit amet justo sit amet ultricies. Phasellus eu dignissim augue, ut tristique magna. Aenean et diam odio. Morbi dapibus facilisis nibh non sagittis.</p>
+	  	<h4 class="uPseudo">Toi</h4>
+	  	<p class="urMessages">Ok.</p>
+	  	<p class="urMessages">Nam nisi nisl, sollicitudin luctus ipsum id, dignissim cursus elit.</p>
+	  	<h4 class="mPseudo">Moi</h4>
+	  	<p class="myMessages">Phasellus eleifend convallis leo non accumsan. Phasellus pulvinar auctor felis in adipiscing.</p>
+	  	<p class="myMessages">Curabitur molestie purus molestie turpis rhoncus, eget luctus ante aliquet.</p>
+	  </div>
+  	<textarea id="nextMsg"></textarea>
+  	<button class="OrgBorder" id="sendMsg">Envoyer</button>
+  	<img id="takePic" src="<?php echo $IMG; ?>takePic.png" alt="picture"/>
+  	
+  </section>
+
+
+    <footer>
+        <p>Mentions légales - Copyright</p>
+    </footer>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script type="text/javascript" src="public/js/u&me.js"></script>
+    <script type="text/javascript" src="public/js/foundation/foundation.js"></script>
+</body>
+</html>
