@@ -1,14 +1,46 @@
 $(document).ready(function(){
+	
+	/*NAV
+	hover et page active
+	*/
+	
+	var parent=$(".active").parent();
+	$(".active").css('height','80px');
+	$(".active").css('width','80px');
+	$(".active").css('margin-left','5px');
+	$(".active").css('margin-top','0px');
+	$(".active").css('margin-bottom','0px');
+	/* $(".active").css('background-image','url(\'app/Views/img/tabouH.png\')'); */
+	
+	$("#btn_profilePic").click(function () {
+    	$("#upload_profilePic").trigger('click');
+    });
+    
+    $("#btn_bgPic").click(function () {
+    	$("#upload_bgPic").trigger('click');
+    });
+    
+    /*INFOS
+    focus/blur 
+    */
+    
+   /*
+ $('#nom').click(function(){
+    	$('.required:nth-child(2)').hide();
+    });
+    
+    $('#nom').blur(function(){
+    	$('.required:nth-child(2)').show();
+    });
+*/
+
+	/*PUNCHING BALL - KISS
+	Mécanique et options du jeu
+	*/
+
 	var score = 0;
 	var started=false;
 	var rage;
-	
-	
-	
-	var parent=$(".active").parent();
-	$(".active").css('height','90px');
-	$(".active").css('width','90px');
-	$(".active").css('background-image','url(\'app/Views/img/tabouH.png\')');
 	
 	$("#pop_send").hide();
 	$("#send").hide();
@@ -30,7 +62,7 @@ $(document).ready(function(){
 		$("#kiss").attr("disabled", true);
 		$("#punch").attr("disabled", true);
 		if(rage=="bisou"){
-			$("#punching_img").css('cursor','help');
+			$("#punching_img").css('cursor','url(\'app/Views/img/bisou.png\'),help');
 		}
 		else{
 			$("#punching_img").css('cursor','url(\'app/Views/img/fleche.png\'),help');
@@ -60,10 +92,10 @@ $(document).ready(function(){
 			//$("#punching_timing").text(gameTimer);
 			if(rage=="bisou"){
 				$("#punching_jeu").append("<img src=\"app/Views/img/bisou.png\" class=\"flechette\" id=\"flechette"+score+"\"/>");
-				$("#flechette"+score+"").css('left',e.pageX-15).css('top',e.pageY-9);
+				$("#flechette"+score+"").css('left',e.pageX).css('top',e.pageY);
 			}
 			else{
-				$("#punching_jeu").append("<img src=\"app/Views/img/flechee.png\" class=\"flechette\" id=\"flechette"+score+"\"/>");
+				$("#punching_jeu").append("<img src=\"app/Views/img/flechee1.png\" class=\"flechette\" id=\"flechette"+score+"\"/>");
 				$("#flechette"+score+"").css('left',e.pageX).css('top',e.pageY);
 			}
 		}
