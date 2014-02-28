@@ -46,10 +46,12 @@ a, a:visited {
 	color:white;
 }
 
+/*
 input{
 	-webkit-appearance: none;	
 	-moz-appearance: none;
 }
+*/
 
 ul {
 	display:inline-block;
@@ -619,24 +621,6 @@ button[disabled=disabled]{
 
 
 /* Page infos personelles*/
-
-.required{
-	font-family: sans-serif;
-	font-size: 30px;
-	color: rgba(231,76,60,0.7);
-}
-
-.required:nth-child(2){
-	position: relative;
-	left: -15px;
-	}
-	
-.required:nth-child(4){
-	position: relative;
-	top:-55px;
-	left: 58px;
-	}
-
 #lettrine{
 	z-index:15;
 	margin-left: -15px;	
@@ -701,7 +685,7 @@ button[disabled=disabled]{
 	margin-bottom: 10px;
 }
 
-label[for=birthDay],label[for=meetDay]{
+#infosPersos label[for=birthDay],label[for=meetDay]{
 	font-size: 20px;
 	margin-right: 5px;
 }
@@ -713,7 +697,7 @@ label[for=birthDay],label[for=meetDay]{
 	margin-bottom: 30px;
 }
 
-select{
+#infosPersos select{
 	-webkit-appearance: none;
 	-moz-appearance:none;
 	text-indent: 1px;
@@ -774,23 +758,23 @@ select{
 }
 
 /* Cachons la case à cocher */  
-[type="radio"]:not(:checked),  
-[type="radio"]:checked {  
+#infosPersos [type="radio"]:not(:checked),  
+#infosPersos [type="radio"]:checked {  
   position: absolute;  
   left: -9999px;  
 }  
    
 /* on prépare le label */  
-[type="radio"]:not(:checked) + label,  
-[type="radio"]:checked + label {  
+#infosPersos [type="radio"]:not(:checked) + label,  
+#infosPersos [type="radio"]:checked + label {  
   position: relative; /* permet de positionner les pseudo-éléments */  
   padding-left: 25px; /* fait un peu d'espace pour notre case à venir */  
 }
 
 /* Aspect des radioes */  
 /* :before sert à créer la case à cocher */  
-[type="radio"]:not(:checked) + label:before,  
-[type="radio"]:checked + label:before {  
+#infosPersos [type="radio"]:not(:checked) + label:before,  
+#infosPersos [type="radio"]:checked + label:before {  
   content: '';  
   position: absolute;  
   left:5px; top: 20px;  
@@ -801,8 +785,8 @@ select{
 }  
    
 /* Aspect général de la coche */  
-[type="radio"]:not(:checked) + label:after,  
-[type="radio"]:checked + label:after {  
+#infosPersos [type="radio"]:not(:checked) + label:after,  
+#infosPersos [type="radio"]:checked + label:after {  
   content: '\2022';  
   position: absolute;  
   top:-10px; left: 5px;  
@@ -810,16 +794,32 @@ select{
   font-size: 50px; 
 }  
 /* Aspect si "pas cochée" */  
-[type="radio"]:not(:checked) + label:after {  
+#infosPersos [type="radio"]:not(:checked) + label:after {  
   opacity: 0; /* coche invisible */  
   transform: scale(0); /* mise à l'échelle à 0 */  
 }  
 /* Aspect si "cochée" */  
-[type="radio"]:checked + label:after {  
+#infosPersos [type="radio"]:checked + label:after {  
   opacity: 1; /* coche opaque */  
   transform: scale(1); /* mise à l'échelle 1:1 */  
 }
 
+.required{
+	font-family: sans-serif;
+	font-size: 30px;
+	color: rgba(231,76,60,0.7);
+}
+
+.required:nth-child(2){
+	position: relative;
+	left: -15px;
+	}
+	
+.required:nth-child(4){
+	position: relative;
+	top:-55px;
+	left: 58px;
+	}
 
 
 
@@ -1096,5 +1096,44 @@ padding-bottom:30%;
 	opacity:1;
 }
 
+
+
+
+
+/* Page fantasmes*/
+#fantasmes{
+	font-size: 18px;
+	background: none;
+}
+
+#fantasmesM, #fantasmesT{
+	float: left;
+	width: 48%;
+	background:rgba(0,0,0,0.5);
+	padding: 10px;
+	margin: 5px;
+}
+
+#fantasmesM h1, #fantasmesT h1{
+text-align: center;
+}
+
+.whynot, .noway{
+	text-align: center;
+}
+
+#fantasmes td, #fantasmes th{
+	padding: 8px;
+}
+
+
+.rdio{
+	margin-left: 10px;
+	display: block;
+	border: 2px solid rgb(231,76,60);
+	height: 20px; width:20px;
+	border-radius:20px;	
+	background-color: transparent;
+}
 	
 

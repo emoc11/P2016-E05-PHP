@@ -109,5 +109,20 @@ $(document).ready(function(){
 		score=0;
 		$("#punching_scorep").text(score);
 	});
+	
+	
+	/*PAGE FANTASMES*/
+	var checked=false;
+	$(".rdio").click(function(){
+		if(checked){
+			$(this).css('background-color','transparent');
+			checked=false;
+		}
+		else {
+			$(this).css('background-color','rgb(231,76,60)');
+			checked=true;
+		}
+	});
+
 
 });
