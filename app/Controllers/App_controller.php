@@ -10,20 +10,8 @@ class App_controller extends Controller{
         $this->tpl=array('render'=>'template.html');
     }
 
-    function punching($f3){
-        $params['users_id'] = 1;
-        $f3->set('url_image',$this->model->getPunchImg(array('users_id'=>$params['users_id'])));
-        $this->tpl=array('render'=>'punching.html');
-    }
-    
-    function calendrier($f3){
-        $params['couples_id'] = 1;
-        $f3->set('calendar_name',$this->model->calendrier(array('couples_id'=>$params['couples_id'])));
-        $this->tpl=array('render'=>'calendrier.html');
-    }
-    
-    function infos($f3){
-        $this->tpl=array('render'=>'infos.html');
+    function nous($f3){
+        $this->tpl=array('render'=>'nous.html');
     }
     
     function wishlist($f3){
@@ -33,6 +21,61 @@ class App_controller extends Controller{
     function album($f3){
         $this->tpl=array('render'=>'album.html');
     }
+    
+    function calendrier($f3){
+        $params['couples_id'] = 1;
+        $f3->set('calendar_name',$this->model->calendrier(array('couples_id'=>$params['couples_id'])));
+        $this->tpl=array('render'=>'calendrier.html');
+    }
+    
+    
+    
+    function chat($f3){
+        $this->tpl=array('render'=>'chat.html');
+    }
+    
+    function le_chat($f3){
+        $this->tpl=array('render'=>'le_chat.html');
+    }
+    
+    
+    function tabou($f3){
+        $this->tpl=array('render'=>'tabou.html');
+    }
+    
+    function pasdire($f3){
+        $this->tpl=array('render'=>'pasdire.html');
+    }
+    
+    
+    
+    function coquin($f3){
+        $this->tpl=array('render'=>'coquin.html');
+    }
+    
+    function fantasmes($f3){
+        $this->tpl=array('render'=>'fantasmes.html');
+    }
+    
+    function jeux($f3){
+        $this->tpl=array('render'=>'jeux.html');
+    }
+    
+    
+    
+    function punching($f3){
+        $params['users_id'] = 1;
+        $f3->set('url_image',$this->model->getPunchImg(array('users_id'=>$params['users_id'])));
+        $this->tpl=array('render'=>'punching.html');
+    }
+    
+    
+    
+    function infos($f3){
+        $this->tpl=array('render'=>'infos.html');
+    }
+    
+    
 
     function image_punching($f3){
         if($_FILES['files']['error'] == 0) {

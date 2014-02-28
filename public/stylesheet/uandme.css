@@ -194,14 +194,14 @@ nav li a{
 	width:70px;
 }
 
-#nous{
+#menu_nous{
 	height: 70px;
 	width: 70px;
 	background-image: url('img/nous.png');
 	background-size: cover;
 	}
 	
-#nous:hover{
+#menu_nous:hover{
 	height: 80px;
 	width: 80px;
 	margin-left: 5px;
@@ -211,14 +211,14 @@ nav li a{
 	background-size: cover;
 }
 
-#chat{	
+#menu_chat{	
 	height: 70px;
 	width: 70px;
 	background-image: url('img/chat.png');
 	background-size: cover;
 }
 
-#chat:hover{	
+#menu_chat:hover{	
 	height: 80px;
 	width: 80px;
 	margin-left: 5px;
@@ -228,14 +228,14 @@ nav li a{
 	background-size: cover;
 }
 
-#tabou{
+#menu_tabou{
 	height: 70px;
 	width: 70px;
 	background-image: url('img/tabou.png');
 	background-size: cover;
 }
 
-#tabou:hover{
+#menu_tabou:hover{
 	height: 80px;
 	width: 80px;
 	margin-left: 5px;
@@ -246,14 +246,14 @@ nav li a{
 	background-size: cover;
 }
 
-#coquin{
+#menu_coquin{
 	height: 70px;
 	width: 70px;
 	background-image: url('img/coquin.png');
 	background-size: cover;
 }
 
-#coquin:hover{
+#menu_coquin:hover{
 	height: 80px;
 	width: 80px;
 	margin-left: 5px;
@@ -261,11 +261,6 @@ nav li a{
 	margin-bottom: -5px;
 	background-image: url('img/coquinH.png');
 	background-size: cover;
-}
-
-#punching{
-	border: 1px solid black;
-	margin: auto;
 }
 
 .main{
@@ -282,6 +277,74 @@ nav li a{
 
 .mainTitle{
 	margin-top: 0;
+}
+
+
+footer{
+	-webkit-transform: rotate(-2deg);
+	-moz-transform: rotate(-2deg);
+	width: 120%;
+	height: 140px;
+	background-color: rgba(0,0,0,0.7);
+	position: fixed;
+	bottom: 0;
+	right: -20px;
+	bottom: -100px;
+}
+
+footer p{
+	position: absolute;
+	top:20px;
+	right:100px;
+	-webkit-transform: rotate(2deg);
+	-moz-transform: rotate(2deg);
+}
+
+.sousMenu{
+	background: none;
+	font-family: Bellerose;
+	margin-top: 10%;
+}
+
+.ssmenu a{
+	float: left;
+	text-align: center;
+	display: block;
+	height: 120px;
+	width: 120px;
+	font-size: 20px;
+	margin: 30px;
+	border-radius: 100px;
+	background-color: rgba(0,0,0,0.6);
+	padding:20px;
+	padding-top: 35px;
+}
+
+#ssMenu_albumPhoto.ssmenu a, #ssMenu_pasdire.ssmenu a{
+	padding-top: 20px;
+}
+
+#ssMenu_chat.ssmenu a{
+	padding-top: 45px;
+}
+
+.ssmenu:first-child{
+	color: red;
+}
+
+.ssmenu a:hover{
+	color: black;
+	background-color: rgba(255,255,255,0.4);
+}
+
+
+
+
+
+/*Page Punchingball*/
+#punching{
+	border: 1px solid black;
+	margin: auto;
 }
 
 #game{
@@ -388,25 +451,11 @@ button[disabled=disabled]{
 	text-align: center;
 }
 
-footer{
-	-webkit-transform: rotate(-2deg);
-	-moz-transform: rotate(-2deg);
-	width: 120%;
-	height: 140px;
-	background-color: rgba(0,0,0,0.7);
-	position: fixed;
-	bottom: 0;
-	right: -20px;
-	bottom: -100px;
-}
 
-footer p{
-	position: absolute;
-	top:20px;
-	right:100px;
-	-webkit-transform: rotate(2deg);
-	-moz-transform: rotate(2deg);
-}
+
+
+
+
 
 /* Page Calendrier */
 
@@ -563,6 +612,11 @@ footer p{
 	left:0;
 	cursor: pointer;
 }
+
+
+
+
+
 
 /* Page infos personelles*/
 
@@ -766,6 +820,11 @@ select{
   transform: scale(1); /* mise à l'échelle 1:1 */  
 }
 
+
+
+
+
+
 /* Page album */
 .columnAlbum {
 	margin-top:;
@@ -850,6 +909,11 @@ select{
 	display:inline-block;
 	width:68%;
 }
+
+
+
+
+
 
 /* Page wishlist */
 
