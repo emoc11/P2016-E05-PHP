@@ -8,7 +8,7 @@ body{
 	background-image: url(img/bg.jpg);
 	background-size: cover;
 	z-index: 1;
-	overflow-x: hidden;
+	overflow: hidden;
 }
 
 #ajouter_event p {
@@ -46,12 +46,10 @@ a, a:visited {
 	color:white;
 }
 
-/*
-input{
+button{
 	-webkit-appearance: none;	
 	-moz-appearance: none;
 }
-*/
 
 ul {
 	display:inline-block;
@@ -1137,3 +1135,50 @@ text-align: center;
 }
 	
 
+
+
+
+/*Page jeux coquins*/
+
+#jeux{
+	width: 45%;
+	margin: auto;
+}
+
+#roulette{
+	text-transform: uppercase;
+	font-size: 20px;
+	text-align: center;
+	border: 5px solid rgba(231,76,60, 0.4);
+	background: rgba(0,0,0,0.6);
+	font-family: Bellerose;
+	margin: auto;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+#roulette td{
+	border: 1px solid rgba(231,76,60, 0.2);
+	padding: 10px 15px 15px 15px;
+	width: 200px;
+}
+
+#roulette #selected{
+	font-size: 25px;
+	border-top:5px solid rgba(231,76,60, 0.4);
+	border-bottom:5px solid rgba(231,76,60, 0.4);
+	color: red;
+	background: rgba(0,0,0,0.5);
+}
+
+#roulette #selected td{
+	padding: 35px;
+}
+
+#jeux button{
+	width: 100px;
+	height: 30px;
+	margin: auto;
+	background :rgba(231,76,60, 0.4);
+	border: none;
+}

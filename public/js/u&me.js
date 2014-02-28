@@ -123,6 +123,85 @@ $(document).ready(function(){
 			checked=true;
 		}
 	});
+	
+	
+	/*PAGE JEU COQUIN*/
+	var running=false;
+	$("#randomize").click(function(){
+		if(!running){
+		tours_v=8+Math.floor(Math.random()*10);
+			vb_fast=setInterval(function(){
+				var temp=$("#vb1").text();
+				$("#vb1").text($("#vb2").text());
+				$("#vb2").text($("#vb3").text());
+				$("#vb3").text($("#vb4").text());
+				$("#vb4").text($("#vb5").text());
+				$("#vb5").text($("#vb6").text());
+				$("#vb6").text($("#vb7").text());
+				$("#vb7").text(temp);
+				tours_v--;
+				console.log(tours_v);
+				if(tours_v==2){
+					clearInterval(vb_fast);
+					vb_slow=setInterval(function(){
+						var temp2=$("#vb1").text();
+						$("#vb1").text($("#vb2").text());
+						$("#vb2").text($("#vb3").text());
+						$("#vb3").text($("#vb4").text());
+						$("#vb4").text($("#vb5").text());
+						$("#vb5").text($("#vb6").text());
+						$("#vb6").text($("#vb7").text());
+						$("#vb7").text(temp2);
+						tours_v--;
+						console.log(tours_v);
+						if(tours_v<=0){
+							clearInterval(vb_slow);
+							$("#randomize").text("Une zone");
+						}
+					}, 620);
+				}
+			}, 320);
+		running= !running;
+		
+		}
+		else{
+		tours_z=8+Math.floor(Math.random()*10);
+			zn_fast=setInterval(function(){
+				var temp=$("#zn1").text();
+				$("#zn1").text($("#zn2").text());
+				$("#zn2").text($("#zn3").text());
+				$("#zn3").text($("#zn4").text());
+				$("#zn4").text($("#zn5").text());
+				$("#zn5").text($("#zn6").text());
+				$("#zn6").text($("#zn7").text());
+				$("#zn7").text(temp);
+				tours_z--;
+				console.log(tours_z);
+				if(tours_z==2){
+					clearInterval(zn_fast);
+					zn_slow=setInterval(function(){
+						var temp2=$("#zn1").text();
+						$("#zn1").text($("#zn2").text());
+						$("#zn2").text($("#zn3").text());
+						$("#zn3").text($("#zn4").text());
+						$("#zn4").text($("#zn5").text());
+						$("#zn5").text($("#zn6").text());
+						$("#zn6").text($("#zn7").text());
+						$("#zn7").text(temp2);
+						tours_z--;
+						console.log(tours_z);
+						if(tours_z<=0){
+							clearInterval(zn_slow);
+							$("#randomize").text("Rejouer");
+						}
+					}, 600);
+				}
+			}, 300);
+		running= !running;
+			
+		}
+		
+	});
 
 
 });
