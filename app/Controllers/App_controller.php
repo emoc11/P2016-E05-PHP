@@ -68,14 +68,6 @@ class App_controller extends Controller{
         $f3->set('url_image',$this->model->getPunchImg(array('users_id'=>$params['users_id'])));
         $this->tpl=array('render'=>'punching.html');
     }
-    
-    
-    
-    function infos($f3){
-        $this->tpl=array('render'=>'infos.html');
-    }
-    
-    
 
     function image_punching($f3){
         if($_FILES['files']['error'] == 0) {
@@ -100,6 +92,14 @@ class App_controller extends Controller{
         }
 
         $this->tpl=array('render'=>'punching.html');
+    }
+    
+    function infos($f3){
+        $this->tpl=array('render'=>'infos.html');
+    }
+    
+    function bilan($f3){
+        $this->tpl=array('render'=>'bilan.html');
     }
 
 

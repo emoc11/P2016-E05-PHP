@@ -1231,3 +1231,106 @@ text-align: center;
 	height: 25px;
 	cursor: pointer;
 }
+
+
+/* Page bilan*/
+
+.redColor{
+	color: rgba(231,76,60,0.8);
+}
+
+.orangeColor{
+	color: rgba(255,128,49,0.8);
+}
+
+#legende{
+	float: left;
+	width: 100px;
+	margin-top: 300px;
+	padding: 20px;
+	font-size: 18px;
+}
+
+.itemLegende:before{
+	content:'•';
+	font-family: sans-serif;
+	font-size: 40px;
+	position: relative;
+	top:10px;
+	left: -5px;
+}
+
+#charts{
+	float: left;
+	height: 450px;
+	width: 350px;
+	border-bottom:4px solid black;
+	border-left:4px solid black;
+}
+
+#charts li{
+	font-size: 12px;
+}
+
+.truc{
+	float: left;
+	width: 80px;
+	background: rgba(0,0,0,0.5);
+	margin: 10px;
+	text-align: center;
+}
+
+.barres{
+	float: left;
+	width: 80px;
+	height: 330px;
+	background: rgba(0,0,0,0.5);
+	margin: 10px;
+	padding: 10px;
+}
+
+#r{
+	position: relative;
+	left: -350px;
+	top:430px;
+	
+}
+#r p{
+	float: left;
+	margin: 25px;
+}
+
+.barres span{
+	position: relative;
+	font-family: sans-serif;
+	font-size: 30px;
+}
+
+#mBisous{
+	top:33%;
+}
+
+#tBisous{
+	top:22%;
+}
+
+#mPunch{
+	top:40%;
+}
+
+#tPunch{
+	top:34%;
+}
+
+#mWish{
+	top:17%;
+}
+
+#tWish{
+	top:52%;
+}
+
+#nombres{
+	float: right;
+
+}
