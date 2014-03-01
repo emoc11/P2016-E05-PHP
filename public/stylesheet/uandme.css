@@ -269,11 +269,11 @@ nav li a{
 	min-height: 75%;
 	max-height: 80%;
 	padding: 1% 2%;
-	margin-left: 20%;
 	z-index:10;
 	margin-bottom: 10%;
 	overflow-y: auto;
-/* 	border: 1px solid green; */
+	margin-left: 7%;
+	display:inline-block;
 }
 
 .mainTitle{
