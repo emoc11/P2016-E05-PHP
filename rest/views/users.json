@@ -13,6 +13,17 @@
 "users_id":"<?php echo $user->users_id;?>",
 "email":"<?php echo $user->email;?>",
 "pseudo":"<?php echo $user->pseudo;?>",
+"gender":"<?php if($user->gender == 'm') echo 'masculin'; else if($user->gender == 'f') echo 'feminin';;?>",
+"user_url":"<?php echo 'http://'.$_SERVER['HTTP_HOST'].'api/users/'.$user->users_id; ?>"
+},
+<?php endforeach;?>
+<?php elseif(isset($user)):?>
+<?php foreach($user as $user):?>
+{
+"users_id":"<?php echo $user->users_id;?>",
+"email":"<?php echo $user->email;?>",
+"pseudo":"<?php echo $user->pseudo;?>",
+"gender":"<?php if($user->gender == 'm') echo 'masculin'; else if($user->gender == 'f') echo 'feminin';;?>",
 "user_url":"<?php echo 'http://'.$_SERVER['HTTP_HOST'].'api/users/'.$user->users_id; ?>"
 },
 <?php endforeach;?>

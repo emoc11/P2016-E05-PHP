@@ -3,7 +3,7 @@
 namespace REST;
 
 abstract class api{
-  
+
 protected $tpl;
   
   abstract function get($f3);
@@ -18,13 +18,12 @@ protected $tpl;
    $f3->set('ONERROR',function($f3){
      print_r($f3->get('ERROR'));
      $f3->set('header',$f3->get('ERROR'));
-     echo \View::instance()->render('views/users.json','application/json');
    });
   }
   
-  function afterroute(){
+  function afterroute($f3){
     $f3->set('header',array('code'=>200,'status'=>'OK','text'=>''));
-    echo \View::instance()->render($this->tpl,'application/json');
+    echo \View::instance()->render('users.json','application/json');
   }
   
 }
