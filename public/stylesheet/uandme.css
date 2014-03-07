@@ -4,7 +4,7 @@ body{
 	font-size:75%;
 	width: 100%;
 	min-height:100%;
-	background-image: url(img/bg.jpg);
+	background: url(../../app/Views/img/bg.jpg);
 	background-size: cover;
 	z-index: 1;
 	overflow: hidden;
@@ -280,6 +280,19 @@ nav li a{
 	margin-top: 0;
 }
 
+#connect{
+	margin-top: 20px;
+	margin-bottom: 50px;
+}
+
+#home{
+	padding-left: 23%;
+}
+
+#home h1.mainTitle{
+	margin-top: 50px;
+	margin-bottom: 30px;
+}
 
 footer{
 	-webkit-transform: rotate(-2deg);
@@ -626,11 +639,12 @@ button[disabled=disabled]{
 }
 
 #infosPersos{
-	width: 45%;
+	width: 50%;
 	padding: 2%;
 	font-family: Bellerose;
 	margin:auto;
-	margin-top: 20px;
+	margin-top: 10px;
+	margin-left: 20%;
 }
 
 #infosPersos h1{
@@ -638,25 +652,26 @@ button[disabled=disabled]{
 	margin-top: -50px;
 }
 
-#infosPersos input{
+#infosPersos input[type=text], #infosPersos input[type=email], #infosPersos input[type=password],#home input[type=text],#home input[type=password]{
 	border: none;
 	background: rgba(0,0,0,0.6);
+	border: 1px solid white;
 }
 
-#nom{
-	margin-top: 30px;
-	height: 35px;
-	margin-bottom: 30px;
+#identifiant, #nom, #password, #password_confirm{
+	height: 30px;
+	margin-top: 20px;
 	width: 250px;
 	padding-left: 5px;
 }
+
 #sexeF+label,#sexeH+label{
 	font-size: 20px;
 	margin-left: 10px;
 	margin-right: 20px;
 }
 
-#nom::-webkit-input-placeholder{
+#nom::-webkit-input-placeholder, #password::-webkit-input-placeholder, #password_confirm::-webkit-input-placeholder{
 	height: 20px;
 	font-style: italic;
 	padding-left: 5px;
@@ -752,7 +767,7 @@ button[disabled=disabled]{
 
 #validInfos{
 	width: 100px;
-	margin-top: 30px;
+	margin-top: 20px;
 	margin-left: 40%;
 }
 
@@ -809,10 +824,12 @@ button[disabled=disabled]{
 	color: rgba(231,76,60,0.7);
 }
 
+/*
 .required:nth-child(2){
 	position: relative;
 	left: -15px;
 	}
+*/
 	
 .required:nth-child(4){
 	position: relative;

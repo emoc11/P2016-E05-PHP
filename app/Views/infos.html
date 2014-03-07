@@ -27,7 +27,6 @@
     </p>
   </header>
 
-<!--
   <nav>
   	<ul>
   	<li class="itemMenu" id="menu_nous"><a href="nous"></a></li>
@@ -36,7 +35,6 @@
   	<li class="itemMenu" id="menu_coquin"><a href="coquin"></a></li>
   	</ul>
   </nav>
--->
 
   <!--
 <section id="stats">
@@ -56,11 +54,13 @@
   <section class="main orgBorder" id="infosPersos">
   	<div class="round red" id="lettrine"></div>
   	<h1 class="mainTitle">Infos personnelles</h1>
-	  <form>
+	  <form action="signin" method="POST">
 	  	<fieldset id="infos">
-		  <input type="text" name="nom" id="nom" placeholder="Nom, prénom ou pseudo "/><span class="required">•</span><br/>
-		  <input type="radio" id="sexeF" name="sexec"/><label for="sexeF">Femme <span class="required">•</span></label>
-		  <input type="radio" id="sexeH" name="sexec"/><label for="sexeH">Homme <span class="required">•</span></label>
+		  <input type="email" name="identifiant" id="nom" placeholder="adresse mail " required="required"/><span class="required">•</span><br/>
+		  <input type="password" name="password" id="password" placeholder="Mot de passe" required="required"/><span class="required">•</span><br/>
+		  <input type="password" name="password_confirm" id="password_confirm" placeholder="Confirmation du mot de passe" required="required"/><span class="required">•</span><br/>
+		  <input type="radio" id="sexeF" name="sexec" value="f" required="required"/><label for="sexeF">Femme <span class="required">•</span></label>
+		  <input type="radio" id="sexeH" name="sexec" value="m" required="required"/><label for="sexeH">Homme <span class="required">•</span></label>
 		  <div id="profilePic">
 		  	<img src="<?php echo $IMG;?>plus.png"/ id="btn_profilePic" style="cursor:pointer"">
 		  	<input type="file" id="upload_profilePic"  name="profilePic" style="display:none" />	  	
@@ -69,8 +69,8 @@
 		</fieldset>
 		
 		<fieldset id="dates">
-		  <label for="birthDay">Date de naissance <span class="required">•</span></label>
-		  <select id="birthDay" name="birthDay">
+		  <label for="birthDay">Date de naissance<span class="required"> •</span></label>
+		  <select id="birthDay" name="birthDay"  required="required">
 		  	<option disabled="true" selected="true">Jour</option>
 		  	<option>1</option>
 		  	<option>2</option> 
@@ -105,7 +105,7 @@
 		  	<option>31</option> 
 		  </select>
 		  <select id="birthMonth" name="birthMonth">
-		  	<option disabled="true" selected="true">Mois</option> 
+		  	<option disabled="true" selected="true" required="required">Mois</option> 
 		  	<option>Janvier</option>
 		  	<option>Février</option>
 		  	<option>Mars</option>
@@ -120,7 +120,7 @@
 		  	<option>Décembre</option>
 		  </select> 
 		  <select id="birthYear" name="birthYear">
-		  	<option disabled="true" selected="true">Année</option>
+		  	<option disabled="true" selected="true" required="required">Année</option>
 		  	<option>2001</option>
 		  	<option>2000</option>
 		  	<option>1999</option>
@@ -208,7 +208,7 @@
 		  	<option>Novembre</option>
 		  	<option>Décembre</option> 
 		  </select>
-		  <select id="meetYear" nom="meetYear">
+		  <select id="meetYear" name="meetYear">
 		  	<option selected="true" disabled="true">Année</option>
 		  	<option>2014</option>
 		  	<option>2013</option>
@@ -238,7 +238,9 @@
 		  </div>
 		  <p id="validBgPic">Votre partenaire devra valider la photo choisie.</p>
 		</fieldset>
-		  <button class="OrgBorder" id="validInfos" >Valider</button>
+		<!-- <input type="submit" value="Valider"/> -->
+		  <button class="OrgBorder" id="validInfos">Valider</button>
+	  </form>
   </section>
 
 

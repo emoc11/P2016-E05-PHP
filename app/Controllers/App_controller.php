@@ -26,8 +26,7 @@ class App_controller extends Controller{
         $params['couples_id'] = 1;
         $f3->set('calendar_name',$this->model->calendrier(array('couples_id'=>$params['couples_id'])));
         $this->tpl=array('render'=>'calendrier.html');
-    }
-    
+    } 
     
     
     function chat($f3){
@@ -45,9 +44,7 @@ class App_controller extends Controller{
     
     function pasdire($f3){
         $this->tpl=array('render'=>'pasdire.html');
-    }
-    
-    
+    }  
     
     function coquin($f3){
         $this->tpl=array('render'=>'coquin.html');
@@ -72,7 +69,7 @@ class App_controller extends Controller{
     function image_punching($f3){
         if($_FILES['files']['error'] == 0) {
             \Web::instance()->receive(function($file){
-                    $f3=\Base::instance();
+/*                     $f3=\Base::instance(); */
                     if($file['size'] > (2 * 1024 * 1024)){ // if bigger than 2 MB
                         $f3->set('image_punching_retour','Erreur : le fichier est > 2Mb.');
                         return false;
@@ -101,12 +98,23 @@ class App_controller extends Controller{
     function bilan($f3){
         $this->tpl=array('render'=>'bilan.html');
     }
-
-
-
-
-
+    
     /* Autres controllers */
+    
+    function signin($f3){
+    	$f3->set('is_inscription',$this->model->inscription($f3,array('l_identifiant'=>$f3->get('identifiant'))));		
+    	$this->tpl=array('render'=>'infos.html');
+    }
+
+	function login($f3){
+		$f3->set('is_logged',$this->model->login($f3,$f3->get('POST.identifiant'),$f3->get('POST.password')));
+		$this->tpl=array('render'=>'template.html');
+	}
+
+
+
+
+
 
 
 }
