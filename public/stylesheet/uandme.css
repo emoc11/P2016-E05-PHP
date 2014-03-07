@@ -91,8 +91,9 @@ background-image: url(img/logo.png);
 #notifications{
 	float: right;
 	margin-right: 2%;
-	height:30px;
-	width: 30px;
+	height:20px;
+	width: 20px;
+	margin-top: 5px;
 }
 
 #settings{
