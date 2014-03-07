@@ -44,8 +44,22 @@ class App_model extends Model{
 			if(isset($res[0]) && $res[0] != 'undefined') {
 				$f3->set('SESSION.id_moi',$res[0]['users_id']);
 				$f3->set('SESSION.pseudo',$res[0]['pseudo']);
-				echo $f3->get('SESSION.id_moi');
-				echo $f3->get('SESSION.pseudo');
+				
+				if($res[0]['gender'] == "m" ) {
+					$res_cpl = $this->getMapper('couples')->find(array('homme=?',$res[0]['users_id']), array("limit"=>1));
+					
+					if(isset($res_cpl[0]) && $res_cpl[0] != 'undefined'){
+						echo("FEMME -> ".$res_cpl[0]['femme']);
+						$f3->set('SESSION.id_toi',$res_cpl[0]['femme']);
+					}
+				} else if($res[0]['gender'] == "f") {
+					$res_cpl = $this->getMapper('couples')->find(array('femme=?',$res[0]['users_id']), array("limit"=>1));
+					
+					if(isset($res_cpl[0]) && $res_cpl[0] != 'undefined'){
+						echo("HOMME -> ".$res_cpl[0]['homme']);
+						$f3->set('SESSION.id_toi',$res_cpl[0]['homme']);
+					}
+				}
 			}
 
 		}
