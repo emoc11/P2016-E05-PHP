@@ -50,16 +50,22 @@
   </section>
 
   <section class="main" id='home'>
-  	<h1 class="mainTitle">Connexion</h1>
-  	<form id="login" action="login" method="POST">
-	  	<input type="text" id="identifiant" name="identifiant" placeholder="Identifiant"/><br/>
-	  	<input type="password" id="password" name="password" placeholder="Mot de passe"/><br/>
-	  	<!-- <input type="submit" value="Connexion"/> -->
-	  	<button class="OrgBorder" id="connect">Connexion</button>
-  	</form>
-  	<h3>Pas encore de compte ?</h3>
-	  	<a href='infos'>Inscrivez-vous</a>
-	  	<p><?php echo $_SESSION['mail']?></p>
+  <?php
+    if(!isset($_SESSION['id_moi']) || !isset($_SESSION['pseudo']))
+      echo "
+        <h1 class='mainTitle'>Connexion</h1>
+        <form id='login' action='login' method='POST'>
+          <input type='text' id='identifiant' name='identifiant' placeholder='Identifiant'/><br/>
+          <input type='password' id='password' name='password' placeholder='Mot de passe'/><br/>
+          <!-- <input type='submit' value='Connexion'/> -->
+          <button class='OrgBorder' id='connect'>Connexion</button>
+        </form>
+        <h3>Pas encore de compte ?</h3>
+          <a href='infos'>Inscrivez-vous</a>
+      </section>";
+    else echo "<h2 class='mainTitle'>Bienvenu ".$_SESSION['pseudo']." !</h2>
+      ";
+  ?>
   </section>
 
 
