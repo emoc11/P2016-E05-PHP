@@ -69,6 +69,7 @@ $(document).ready(function(){
 		}		
 		gameTimer = setTimeout(function(){
 			$("#send").show();
+			$("final_score").text(score);
 			$("#pop_send").show();
 			started=false; }
 			, 15000);
@@ -108,6 +109,7 @@ $(document).ready(function(){
 		$(".flechette").remove();
 		score=0;
 		$("#punching_scorep").text(score);
+		$("final_score").text(score);
 	});
 	
 	
