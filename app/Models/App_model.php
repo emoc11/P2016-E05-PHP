@@ -19,7 +19,7 @@ class App_model extends Model{
 		endif;
 	}
 	
-	function inscription($f3,$params){
+	function inscription($f3){
 		if($f3->get('POST.password')==$f3->get('POST.password_confirm')){
 			$user=$this->getMapper('users');
 	    	$user->email      = $f3->get('POST.identifiant');
@@ -31,7 +31,7 @@ class App_model extends Model{
 	}
 	
 	function login ($f3,$id,$pw){
-		$db=new DB\SQL('mysql:host=localhost;port=3306;dbname=u&me','root','root');
+		$db=new DB\SQL('mysql:host='.$f3->get('db_host').';port=8889;dbname='.$f3->get('db_server'),$f3->get('db_login'),$f3->get('db_password'));
 		$user=new DB\SQL\Mapper($db,'users');
 		$auth = new \Auth($user, array(
 			'id'=>'email',
@@ -40,6 +40,12 @@ class App_model extends Model{
 		if($auth){
 			echo("CONNECTED");
 		}
+		
+		// just create an object
+		new \DB\SQL\Session($db);
+
+		$f3->set('SESSION.mail',$id);
+		echo $f3->get('SESSION.mail');
 	}
 }
 ?>

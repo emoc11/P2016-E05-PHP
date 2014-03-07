@@ -102,7 +102,7 @@ class App_controller extends Controller{
     /* Autres controllers */
     
     function signin($f3){
-    	$f3->set('is_inscription',$this->model->inscription($f3,array('l_identifiant'=>$f3->get('identifiant'))));		
+    	$f3->set('is_inscription',$this->model->inscription($f3));	
     	$this->tpl=array('render'=>'infos.html');
     }
 
