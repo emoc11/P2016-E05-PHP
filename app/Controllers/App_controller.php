@@ -62,7 +62,7 @@ class App_controller extends Controller{
     
     function punching($f3){
         $params['users_id'] = 1;
-        $f3->set('url_image',$this->model->getPunchImg(array('users_id'=>$params['users_id'])));
+        $f3->set('url_image',$this->model->getPunchImg($f3));
         $this->tpl=array('render'=>'punching.html');
     }
 

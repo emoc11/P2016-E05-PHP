@@ -21,7 +21,10 @@
   <header>
     <p>
       <a href=""><img src="<?php echo $IMG; ?>logo.png" id="logo" alt="U&ME"/></a>
-      <a href='logout' id="logout">Déconnexion</a>
+      <?php
+        if(isset($_SESSION['id_moi']) && isset($_SESSION['pseudo']))
+          echo "<a href='logout' id='logout'>Déconnexion</a>";
+      ?>
       <a href='infos'><img src="<?php echo $IMG; ?>settings.png" id="settings" alt="settings"/></a>
       <img src="<?php echo $IMG; ?>notif.png" id="notifications" alt="notif"/>
     </p>
@@ -63,7 +66,7 @@
         <h3>Pas encore de compte ?</h3>
           <a href='infos'>Inscrivez-vous</a>
       </section>";
-    else echo "<h2 class='mainTitle'>Bienvenu ".$_SESSION['pseudo']." !</h2>
+    else echo "<h2 class='mainTitle'>Bienvenue ".$_SESSION['pseudo']." !</h2>
       ";
   ?>
   </section>

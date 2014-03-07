@@ -5,8 +5,8 @@ class App_model extends Model{
 		parent::__construct();
 	}
 
-	function getPunchImg($params){
-		$find = $this->getMapper('users')->find(array('users_id=?',$params['users_id']), array("limit"=>1));
+	function getPunchImg($f3){
+		$find = $this->getMapper('users')->find(array('users_id=?',$f3->get('SESSION.id_toi')), array("limit"=>1));
 		if(isset($find) && !empty($find)):
 			return $find[0]['img'];
 		endif;
