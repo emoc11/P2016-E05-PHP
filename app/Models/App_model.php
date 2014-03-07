@@ -30,22 +30,28 @@ class App_model extends Model{
 		}	
 	}
 	
-	function login ($f3,$id,$pw){
+	function login ($f3,$mail,$pw){
 		$db=new DB\SQL('mysql:host='.$f3->get('db_host').';port=8889;dbname='.$f3->get('db_server'),$f3->get('db_login'),$f3->get('db_password'));
 		$user=new DB\SQL\Mapper($db,'users');
 		$auth = new \Auth($user, array(
 			'id'=>'email',
 			'pw'=>'password')
 		);
-		if($auth){
-			echo("CONNECTED");
+		if($login_true = $auth->login($mail,$pw)){
+			new \DB\SQL\Session($db);
+			$f3->set('SESSION.mail',$mail);
+			$res = $this->getMapper('users')->find(array('email=?',$mail), array("limit"=>1));
+			if(isset($res[0]) && $res[0] != 'undefined') {
+				$f3->set('SESSION.id_moi',$res[0]['users_id']);
+				$f3->set('SESSION.pseudo',$res[0]['pseudo']);
+				echo $f3->get('SESSION.id_moi');
+				echo $f3->get('SESSION.pseudo');
+			}
+
 		}
 		
-		// just create an object
-		new \DB\SQL\Session($db);
-
-		$f3->set('SESSION.mail',$id);
-		echo $f3->get('SESSION.mail');
 	}
+	
+	
 }
 ?>
