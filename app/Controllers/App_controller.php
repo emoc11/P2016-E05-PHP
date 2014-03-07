@@ -99,6 +99,11 @@ class App_controller extends Controller{
         $this->tpl=array('render'=>'bilan.html');
     }
     
+    function logout($f3){
+    	$f3->clear('SESSION');
+        $this->tpl=array('render'=>'template.html');
+    }
+    
     /* Autres controllers */
     
     function signin($f3){
